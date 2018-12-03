@@ -76,7 +76,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.DataModel
             group1.Items.Add(
                     new SampleDataItem(
                         "Group-1-Item-5",
-                        "Zoomable Photo",
+                        "Mapa del biodomo",
                         string.Empty,
                         SampleDataSource.lightGrayImage,
                         "ScrollViewer control hosting a photo, enabling scrolling and zooming.",

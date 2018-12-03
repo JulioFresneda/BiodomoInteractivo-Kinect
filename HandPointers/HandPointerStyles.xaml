@@ -51,7 +51,7 @@
     </Style>
 
     <SolidColorBrush x:Key="ListViewItemPlaceholderBackgroundThemeBrush" Color="Black"/>
-    <SolidColorBrush x:Key="ListViewItemOverlayBackgroundThemeBrush" Color="DarkGray" />
+    <SolidColorBrush x:Key="ListViewItemOverlayBackgroundThemeBrush" Color="#6938A4" />
     <SolidColorBrush x:Key="ListViewItemOverlayForegroundThemeBrush" Color="Yellow" />
     <SolidColorBrush x:Key="ListViewItemOverlaySecondaryForegroundThemeBrush" Color="Aqua"/>
     

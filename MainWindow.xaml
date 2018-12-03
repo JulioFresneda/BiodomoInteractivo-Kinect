@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Microsoft.Samples.Kinect.ControlsBasics"
         Name="ControlsBasicsWindow"
-        Title="Controls Basics"
+        Title="Biodomo Interactivo"
         mc:Ignorable="d"
         d:DesignWidth="1200"
         d:DesignHeight="700"
