@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "task-beach",
+      "appliesTo": "Images/beach.jpg",
+      "type": "launch"
+    }
+  ]
+}

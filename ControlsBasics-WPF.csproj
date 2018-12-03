@@ -186,6 +186,7 @@
     <Resource Include="Images\hamlet.jpg" />
     <Resource Include="Images\operahouse.jpg" />
     <Resource Include="Images\sydney.jpg" />
+    <Resource Include="Images\mapa.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\CursorSpriteSheetPurple.png" />
