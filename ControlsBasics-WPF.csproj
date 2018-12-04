@@ -64,7 +64,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Common\BindableBase.cs" />
-    <Compile Include="DataModel\SampleDataSource.cs" />
     <Compile Include="HandPointers\HandInScreenEngagementModel.cs" />
     <Compile Include="Pages\ButtonSample.xaml.cs">
       <DependentUpon>ButtonSample.xaml</DependentUpon>
@@ -193,6 +192,13 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\CursorSpriteSheet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\exploraButton.png" />
+    <Resource Include="Assets\qrButton.png" />
+    <Resource Include="Assets\preciosButton.png" />
+    <Resource Include="Assets\mapaButton.png" />
+    <Resource Include="Assets\grid_bg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

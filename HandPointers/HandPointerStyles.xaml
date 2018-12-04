@@ -50,7 +50,7 @@
         <Setter Property="VerticalAlignment" Value="Center" />
     </Style>
 
-    <SolidColorBrush x:Key="ListViewItemPlaceholderBackgroundThemeBrush" Color="Black"/>
+    <SolidColorBrush x:Key="ListViewItemPlaceholderBackgroundThemeBrush" Color="Transparent"/>
     <SolidColorBrush x:Key="ListViewItemOverlayBackgroundThemeBrush" Color="#6938A4" />
     <SolidColorBrush x:Key="ListViewItemOverlayForegroundThemeBrush" Color="Yellow" />
     <SolidColorBrush x:Key="ListViewItemOverlaySecondaryForegroundThemeBrush" Color="Aqua"/>
@@ -98,6 +98,50 @@
             </Grid>
         </Button>
     </DataTemplate>
+
+  <DataTemplate x:Key="ExploraButton">
+    <Button Margin="3" Style="{StaticResource KinectTileButton}">
+      <Grid HorizontalAlignment="Left" Width="375" Height="250">
+        <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}">
+          <Image Source="/Assets/exploraButton.png" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
+        </Border>
+
+      </Grid>
+    </Button>
+  </DataTemplate>
+
+  <DataTemplate x:Key="MapaButton">
+    <Button Margin="3" Style="{StaticResource KinectTileButton}">
+      <Grid HorizontalAlignment="Left" Width="375" Height="250">
+        <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}">
+          <Image Source="/Assets/mapaButton.png" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
+        </Border>
+
+      </Grid>
+    </Button>
+  </DataTemplate>
+
+  <DataTemplate x:Key="QrButton">
+    <Button Margin="3" Style="{StaticResource KinectTileButton}">
+      <Grid HorizontalAlignment="Left" Width="375" Height="250">
+        <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}">
+          <Image Source="/Assets/qrButton.png" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
+        </Border>
+
+      </Grid>
+    </Button>
+  </DataTemplate>
+
+  <DataTemplate x:Key="PreciosButton">
+    <Button Margin="3" Style="{StaticResource KinectTileButton}">
+      <Grid HorizontalAlignment="Left" Width="375" Height="250">
+        <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}">
+          <Image Source="/Assets/preciosButton.png" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
+        </Border>
+
+      </Grid>
+    </Button>
+  </DataTemplate>
     
     <!-- Button Text Style -->
     <Style x:Key="ButtonTextStyle" TargetType="TextBlock">

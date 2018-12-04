@@ -8,7 +8,7 @@
       d:DesignHeight="300" d:DesignWidth="300"
 	  >
 
-    <Grid >
+    <Grid x:Name="mapaGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -24,5 +24,7 @@
                       k:KinectRegion.ZoomMode="Enabled">
             <Image Stretch="None" Grid.Column="0" Grid.Row="0" Source="/Images/mapaBiodomo.jpg" />
         </ScrollViewer>
+
+      
     </Grid>
 </UserControl>
