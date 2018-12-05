@@ -2,12 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\Assets",
-    "\\bin\\AnyCPU",
     "\\Common",
-    "\\DataModel",
     "\\HandPointers",
     "\\Images",
     "\\Pages"
   ],
+  "SelectedNode": "\\MainWindow.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

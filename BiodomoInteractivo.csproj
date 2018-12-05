@@ -64,6 +64,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Common\BindableBase.cs" />
+    <Compile Include="DataModel\DataModel.cs" />
     <Compile Include="HandPointers\HandInScreenEngagementModel.cs" />
     <Compile Include="Pages\ButtonSample.xaml.cs">
       <DependentUpon>ButtonSample.xaml</DependentUpon>
@@ -81,8 +82,8 @@
     <Compile Include="Pages\KinectPointerPointSample.xaml.cs">
       <DependentUpon>KinectPointerPointSample.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ScrollViewerSample.xaml.cs">
-      <DependentUpon>ScrollViewerSample.xaml</DependentUpon>
+    <Compile Include="Pages\MapaViewerPage.xaml.cs">
+      <DependentUpon>MapaViewerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SliderSample.xaml.cs">
       <DependentUpon>SliderSample.xaml</DependentUpon>
@@ -130,7 +131,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\ScrollViewerSample.xaml">
+    <Page Include="Pages\MapaViewerPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -185,7 +186,6 @@
     <Resource Include="Images\hamlet.jpg" />
     <Resource Include="Images\operahouse.jpg" />
     <Resource Include="Images\sydney.jpg" />
-    <Resource Include="Images\mapaBiodomo.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\CursorSpriteSheetPurple.png" />
@@ -195,10 +195,13 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\exploraButton.png" />
-    <Resource Include="Assets\qrButton.png" />
-    <Resource Include="Assets\preciosButton.png" />
-    <Resource Include="Assets\mapaButton.png" />
     <Resource Include="Assets\grid_bg.png" />
+    <Resource Include="Assets\mapaButton.png" />
+    <Resource Include="Assets\preciosButton.png" />
+    <Resource Include="Assets\qrButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mapaBiodomo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
