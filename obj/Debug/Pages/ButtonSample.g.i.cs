@@ -37,7 +37,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics {
     /// <summary>
     /// ButtonSample
     /// </summary>
-    public partial class ButtonSample : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector {
+    public partial class ExploraPage : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector {
         
         
         #line 17 "..\..\..\Pages\ButtonSample.xaml"

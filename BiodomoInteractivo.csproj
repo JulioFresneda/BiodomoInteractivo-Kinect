@@ -66,8 +66,8 @@
     <Compile Include="Common\BindableBase.cs" />
     <Compile Include="DataModel\DataModel.cs" />
     <Compile Include="HandPointers\HandInScreenEngagementModel.cs" />
-    <Compile Include="Pages\ButtonSample.xaml.cs">
-      <DependentUpon>ButtonSample.xaml</DependentUpon>
+    <Compile Include="Pages\ExploraPage.xaml.cs">
+      <DependentUpon>ExploraPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\CheckBoxRadioButtonSample.xaml.cs">
       <DependentUpon>CheckBoxRadioButtonSample.xaml</DependentUpon>
@@ -76,6 +76,15 @@
       <DependentUpon>EngagementSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="HandPointers\HandOverHeadEngagementModel.cs" />
+    <Compile Include="Pages\ExploraSubPages\Indopacifico.xaml.cs">
+      <DependentUpon>Indopacifico.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ExploraSubPages\Madagascar.xaml.cs">
+      <DependentUpon>Madagascar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ExploraSubPages\Amazonas.xaml.cs">
+      <DependentUpon>Amazonas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ItemsControlsSample.xaml.cs">
       <DependentUpon>ItemsControlsSample.xaml</DependentUpon>
     </Compile>
@@ -111,7 +120,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\ButtonSample.xaml">
+    <Page Include="Pages\ExploraPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -122,6 +131,18 @@
     <Page Include="Pages\EngagementSettings.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ExploraSubPages\Indopacifico.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ExploraSubPages\Madagascar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ExploraSubPages\Amazonas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ItemsControlsSample.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -202,6 +223,13 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\mapaBiodomo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\explora_amaz_button.png" />
+    <Resource Include="Assets\explora_button_left_ip.png" />
+    <Resource Include="Assets\explora_button_right_ip.png" />
+    <Resource Include="Assets\explora_ip_button.png" />
+    <Resource Include="Assets\explora_mad_button.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Julio\source\repos\Kinect-Biodomo\App.xaml
-11-846862201
+14-473751613
 
-17-500647936
+20127558456
 14546822785
-Common\StandardStyles.xaml;HandPointers\HandPointerStyles.xaml;MainWindow.xaml;Pages\ButtonSample.xaml;Pages\CheckBoxRadioButtonSample.xaml;Pages\EngagementSettings.xaml;Pages\ItemsControlsSample.xaml;Pages\KinectPointerPointSample.xaml;Pages\MapaViewerPage.xaml;Pages\SliderSample.xaml;SelectionDisplay.xaml;
+Common\StandardStyles.xaml;HandPointers\HandPointerStyles.xaml;MainWindow.xaml;Pages\ExploraPage.xaml;Pages\CheckBoxRadioButtonSample.xaml;Pages\EngagementSettings.xaml;Pages\ExploraSubPages\Indopacifico.xaml;Pages\ExploraSubPages\Madagascar.xaml;Pages\ExploraSubPages\Amazonas.xaml;Pages\ItemsControlsSample.xaml;Pages\KinectPointerPointSample.xaml;Pages\MapaViewerPage.xaml;Pages\SliderSample.xaml;SelectionDisplay.xaml;
 
 False
 

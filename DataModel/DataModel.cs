@@ -52,7 +52,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.DataModel
                     "Group Title: 3",
                     "Group Subtitle: 3",
                     DataModel.mediumGrayImage,
-                    "Group Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor scelerisque lorem in vehicula. Aliquam tincidunt, lacus ut sagittis tristique, turpis massa volutpat augue, eu rutrum ligula ante a ante");
+                    "Group Description: Lorem ipsuutpat augue, eu rutrum ligula ante a ante");
+
             group1.Items.Add(
                     new DataItem(
                         "Group-1",
@@ -62,7 +63,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.DataModel
                         "Several types of buttons with custom styles",
                         itemContent,
                         group1,
-                        typeof(ButtonSample)));
+                        typeof(ExploraPage)));
             group1.Items.Add(
                     new DataItem(
                         "Group-1-Item-2",
@@ -105,6 +106,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.DataModel
                         typeof(EngagementSettings)));
             
             this.AllGroups.Add(group1);
+
+          
         }
 
         public ObservableCollection<DataCollection> AllGroups

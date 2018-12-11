@@ -137,6 +137,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                 this.kinectRegion.InputPointerManager.CompleteGestures();
 
                 e.Handled = true;
+
+
             }
         }
 
@@ -149,6 +151,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         {
             backButton.Visibility = System.Windows.Visibility.Hidden;
             navigationRegion.Content = this.kinectRegionGrid;
+
+
         }
     }
 }

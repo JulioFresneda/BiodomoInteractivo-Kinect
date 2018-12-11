@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="Microsoft.Samples.Kinect.ControlsBasics.ExploraPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	  >
+
+
+    <Grid>
+
+        <ContentControl Grid.Row="1" x:Name="navigationRegion" HorizontalAlignment="Center">
+
+            <Grid>
+                
+
+                <Grid.Background >
+                    <ImageBrush ImageSource="/Assets/grid_bg.png" Stretch="None"/>
+                </Grid.Background>
+
+
+
+                <StackPanel Orientation="Horizontal" Height="35" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Button x:Name="amazonasButton" Content="Amazonas" Click="AmazonasClick" Height="35"/>
+                    <Button x:Name="madagascarButton" Content="Madagascar" Click="MadagascarClick" Height="35"/>
+                    <Button x:Name="indopacificoButton" Content="IndoPacifico" Click="IndopacificoClick" Height="35"/>
+                </StackPanel>
+
+                <Frame x:Name="ExploraFrame" Margin="0,35,0,0" NavigationUIVisibility="Hidden" />
+
+
+
+            </Grid>
+
+        </ContentControl>
+    </Grid>
+</UserControl>
