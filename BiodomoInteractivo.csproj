@@ -231,6 +231,42 @@
     <Resource Include="Assets\explora_ip_button.png" />
     <Resource Include="Assets\explora_mad_button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\ama_a_0.png" />
+    <Resource Include="Assets\ama_a_1.jpeg" />
+    <Resource Include="Assets\ama_a_10.jpg" />
+    <Resource Include="Assets\ama_a_11.jpg" />
+    <Resource Include="Assets\ama_a_12.jpg" />
+    <Resource Include="Assets\ama_a_13.jpg" />
+    <Resource Include="Assets\ama_a_14.jpg" />
+    <Resource Include="Assets\ama_a_15.jpg" />
+    <Resource Include="Assets\ama_a_16.jpg" />
+    <Resource Include="Assets\ama_a_17.jpg" />
+    <Resource Include="Assets\ama_a_2.jpg" />
+    <Resource Include="Assets\ama_a_3.jpeg" />
+    <Resource Include="Assets\ama_a_4.jpeg" />
+    <Resource Include="Assets\ama_a_5.jpg" />
+    <Resource Include="Assets\ama_a_6.jpg" />
+    <Resource Include="Assets\ama_a_7.jpg" />
+    <Resource Include="Assets\ama_a_8.jpg" />
+    <Resource Include="Assets\ama_a_9.jpg" />
+    <Resource Include="Assets\ama_v_0.png" />
+    <Resource Include="Assets\ama_v_1.jpg" />
+    <Resource Include="Assets\ama_v_10.jpg" />
+    <Resource Include="Assets\ama_v_11.jpg" />
+    <Resource Include="Assets\ama_v_12.jpg" />
+    <Resource Include="Assets\ama_v_13.jpg" />
+    <Resource Include="Assets\ama_v_14.jpg" />
+    <Resource Include="Assets\ama_v_15.jpg" />
+    <Resource Include="Assets\ama_v_2.jpg" />
+    <Resource Include="Assets\ama_v_3.jpg" />
+    <Resource Include="Assets\ama_v_4.jpg" />
+    <Resource Include="Assets\ama_v_5.jpg" />
+    <Resource Include="Assets\ama_v_6.jpg" />
+    <Resource Include="Assets\ama_v_7.jpg" />
+    <Resource Include="Assets\ama_v_8.jpg" />
+    <Resource Include="Assets\ama_v_9.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

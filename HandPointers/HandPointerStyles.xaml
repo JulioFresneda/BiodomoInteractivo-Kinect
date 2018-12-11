@@ -1131,8 +1131,8 @@
     </Style>
     <!-- 
     BackButtons have a small visible area.
-    The changes in this style (change margin to padding, set kinectpressinset,
-    add border to template to support padding) enable a larger hit test region 
+    The changes in this style (change margin to pAdding, set kinectpressinset,
+    Add border to template to support pAdding) enable a larger hit test region 
     for HandPointers
     -->
     <Style x:Key="BackButtonStyle" TargetType="Button">

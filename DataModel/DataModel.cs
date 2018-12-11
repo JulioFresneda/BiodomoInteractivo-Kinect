@@ -19,7 +19,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.DataModel
     using System.Globalization;
 
     // The data model defined by this file serves as a representative example of a strongly-typed
-    // model that supports notification when members are added, removed, or modified.  The property
+    // model that supports notification when members are Added, removed, or modified.  The property
     // names chosen coincide with data bindings in the standard item templates.
     // Applications may use this model as a starting point and build on it, or discard it entirely and
     // replace it with something appropriate to their needs.
@@ -189,7 +189,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.DataModel
         /// <param name="uniqueId">The unique id of this item.</param>
         /// <param name="title">The title of this item.</param>
         /// <param name="subtitle">The subtitle of this item.</param>
-        /// <param name="imagePath">A relative path of the image for this item.</param>
+        /// <param name=new Uri("ImagePath">A relative path of the image for this item.</param>
         /// <param name="description">A description of this item.</param>
         protected DataCommon(string uniqueId, string title, string subtitle, Uri imagePath, string description)
         {
@@ -284,7 +284,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.DataModel
         /// <param name="uniqueId">The unique id of this item.</param>
         /// <param name="title">The title of this item.</param>
         /// <param name="subtitle">The subtitle of this item.</param>
-        /// <param name="imagePath">A relative path of the image for this item.</param>
+        /// <param name=new Uri("ImagePath">A relative path of the image for this item.</param>
         /// <param name="description">A description of this item.</param>
         /// <param name="content">The content of this item.</param>
         /// <param name="group">The group of this item.</param>
