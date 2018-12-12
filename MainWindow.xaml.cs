@@ -101,9 +101,9 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                     this.mapaButton.DataContext = button;
                     this.mapaButton.Background = brush;
                 }
-                else if (button.Title == "Codigos QR")
+                else if (button.Title == "Redes Sociales")
                 {
-                    Uri resourceUri = new Uri("Assets/qrButton.png", UriKind.Relative);
+                    Uri resourceUri = new Uri("Assets/redesButton.png", UriKind.Relative);
                     StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
 
                     BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
@@ -112,8 +112,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
 
 
 
-                    this.qrButton.DataContext = button;
-                    this.qrButton.Background = brush;
+                    this.redesButton.DataContext = button;
+                    this.redesButton.Background = brush;
                 }
 
             }

@@ -87,7 +87,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.DataModel
             group1.Items.Add(
                     new DataItem(
                         "Group-1-Item-6",
-                        "Codigos QR",
+                        "Redes Sociales",
                         string.Empty,
                         DataModel.lightGrayImage,
                         "Example of how to get KinectPointerPoints.",

@@ -225,7 +225,6 @@
     <Resource Include="Images\mapaBiodomo.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\explora_amaz_button.png" />
     <Resource Include="Assets\explora_button_left_ip.png" />
     <Resource Include="Assets\explora_button_right_ip.png" />
     <Resource Include="Assets\explora_ip_button.png" />
@@ -330,6 +329,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\exit_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\redesButton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

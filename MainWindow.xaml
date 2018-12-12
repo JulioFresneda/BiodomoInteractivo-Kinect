@@ -43,22 +43,22 @@
             </Grid>
 
             <ContentControl Grid.Row="1" x:Name="navigationRegion" HorizontalAlignment="Center" Margin="0,0,0,0">
-                <Grid x:Name="kinectRegionGrid" Margin="10,20,10,20">
+                <Grid x:Name="kinectRegionGrid" Margin="5,5,5,5">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="300" />
-                        <RowDefinition Height="300" />
+                        <RowDefinition Height="265" />
+                        <RowDefinition Height="265" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="450" />
-                        <ColumnDefinition Width="450" />
+                        <ColumnDefinition Width="390" />
+                        <ColumnDefinition Width="390" />
                     </Grid.ColumnDefinitions>
 
 
 
-                    <Button Name="exploraButton" Click="ButtonClick" BorderThickness="0" Background="Transparent" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="260" Width="385" ></Button>
-                    <Button Name="mapaButton" Click="ButtonClick" BorderThickness="0" Background="Transparent" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="260" Width="385" ></Button>
-                    <Button Name="preciosButton" Click="ButtonClick" BorderThickness="0" Background="Transparent" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="260" Width="385" ></Button>
-                    <Button Name="qrButton" Click="ButtonClick" BorderThickness="0" Background="Transparent" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="260" Width="385" ></Button>
+                    <Button Name="exploraButton" Click="ButtonClick" BorderThickness="0" Background="Transparent" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="250" Width="375" ></Button>
+                    <Button Name="mapaButton" Click="ButtonClick" BorderThickness="0" Background="Transparent" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="250" Width="375" ></Button>
+                    <Button Name="preciosButton" Click="ButtonClick" BorderThickness="0" Background="Transparent" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="250" Width="375" ></Button>
+                    <Button Name="redesButton" Click="ButtonClick" BorderThickness="0" Background="Transparent" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="250" Width="375" ></Button>
                 </Grid>
             </ContentControl>
         </Grid>
