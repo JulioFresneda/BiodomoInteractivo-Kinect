@@ -219,7 +219,6 @@
     <Resource Include="Assets\grid_bg.png" />
     <Resource Include="Assets\mapaButton.png" />
     <Resource Include="Assets\preciosButton.png" />
-    <Resource Include="Assets\qrButton.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\mapaBiodomo.jpg" />
