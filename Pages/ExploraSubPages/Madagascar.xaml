@@ -8,12 +8,16 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Madagascar">
 
-    <Grid>
+    <Grid Margin="0,20,0,0" >
+
+
         <TextBlock x:Name="Titulo" Text="Titulo" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="0"/>
-        <Image x:Name="Especie" Width="500" Source="C:\Users\Julio\source\repos\Kinect-Biodomo\Images\beach.jpg" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center"/>
-        <Button x:Name="Left" HorizontalAlignment="Left" Grid.Row="1" Height="50" Click="LeftClick"/>
-        <Button x:Name="Right" HorizontalAlignment="Right" Grid.Row="1" Height="50" Click="RightClick"/>
-        <TextBox x:Name="Descripcion" VerticalAlignment="Bottom" Height="100"/>
+
+        <Button x:Name="Left" HorizontalAlignment="Left" Grid.Row="1" Height="75" Width="50" Click="LeftClick"/>
+        <Button x:Name="Right" HorizontalAlignment="Right" Grid.Row="1" Height="75" Width="50" Click="RightClick"/>
+        <Image x:Name="Especie" Height="400" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center"/>
+
+        <TextBox x:Name="Descripcion" VerticalAlignment="Bottom" Height="100" Width="1000" TextWrapping="Wrap" Grid.Row="1"/>
 
     </Grid>
 </Page>

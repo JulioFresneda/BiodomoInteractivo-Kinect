@@ -6,7 +6,11 @@
 
 namespace Microsoft.Samples.Kinect.ControlsBasics
 {
+    using System;
+    using System.Windows;
     using System.Windows.Controls;
+    using System.Windows.Media.Imaging;
+    using System.Windows.Resources;
 
     /// <summary>
     /// Interaction logic for MapaViewer
@@ -19,6 +23,12 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         public MapaViewer()
         {
             this.InitializeComponent();
+
+            Uri resourceUri = new Uri("Images/mapaBiodomo.jpg", UriKind.Relative);
+            StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
+
+            BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
+            zoomablephoto.Source = temp;
         }
     }
 }

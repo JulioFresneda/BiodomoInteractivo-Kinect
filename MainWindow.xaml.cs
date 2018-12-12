@@ -30,10 +30,16 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         {
             this.InitializeComponent();
 
+
+
+
             KinectRegion.SetKinectRegion(this, kinectRegion);
 
             App app = ((App)Application.Current);
             app.KinectRegion = kinectRegion;
+
+
+           
 
             // Use the default sensor
             this.kinectRegion.KinectSensor = KinectSensor.GetDefault();
