@@ -24,6 +24,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages.ExploraSubPages
         private List<Uri> uriIndopacifico;
         private List<String> titlesIndopacifico;
         private List<String> descIndopacifico;
+        private List<int> indices;
 
         int puntero;
 
@@ -33,14 +34,29 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages.ExploraSubPages
             uriIndopacifico = new List<Uri>();
             titlesIndopacifico = new List<string>();
             descIndopacifico = new List<string>();
-
+            indices = new List<int>();
 
             puntero = 0;
 
 
             LoadSpecies(uriIndopacifico);
-            Uri resourceUri = new Uri("Images/ip_a_0.jpg", UriKind.Relative);
-            StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
+            Random r = new Random();
+            List<int> indicestemp = new List<int>();
+
+            for (int i = 0; i < uriIndopacifico.Count; i++)
+            {
+                indicestemp.Add(i);
+            }
+
+            while (indicestemp.Count > 0)
+            {
+                int rand = r.Next(0, indicestemp.Count);
+                indices.Add(indicestemp[rand]);
+                indicestemp.RemoveAt(rand);
+            }
+
+
+            StreamResourceInfo streamInfo = Application.GetResourceStream(uriIndopacifico[indices[0]]);
 
             BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
             this.Especie.Source = temp;
@@ -82,14 +98,14 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages.ExploraSubPages
             if (puntero < uriIndopacifico.Count - 1)
             {
                 puntero++;
-                Uri resourceUri = uriIndopacifico[puntero];
+                Uri resourceUri = uriIndopacifico[indices[puntero]];
                 StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
 
                 BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
                 this.Especie.Source = temp;
 
-                this.Titulo.Text = titlesIndopacifico[puntero];
-                this.Descripcion.Text = descIndopacifico[puntero];
+                this.Titulo.Text = titlesIndopacifico[indices[puntero]];
+                this.Descripcion.Text = descIndopacifico[indices[puntero]];
             }
 
         }
@@ -99,14 +115,14 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages.ExploraSubPages
             if (puntero > 0)
             {
                 puntero--;
-                Uri resourceUri = uriIndopacifico[puntero];
+                Uri resourceUri = uriIndopacifico[indices[puntero]];
                 StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
 
                 BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
                 this.Especie.Source = temp;
 
-                this.Titulo.Text = titlesIndopacifico[puntero];
-                this.Descripcion.Text = descIndopacifico[puntero];
+                this.Titulo.Text = titlesIndopacifico[indices[puntero]];
+                this.Descripcion.Text = descIndopacifico[indices[puntero]];
             }
 
         }

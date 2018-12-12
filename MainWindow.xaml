@@ -14,6 +14,7 @@
         MinHeight="700"
         FontFamily="Segoe UI"
         WindowState="Maximized"
+        WindowStyle="None"
         >
 
     <k:KinectRegion x:Name="kinectRegion">
@@ -33,14 +34,15 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="backButton" Visibility="Hidden" Grid.Column="0" Style="{StaticResource BackButtonStyle}" Click="GoBack" />
+                <Button x:Name="backButton" HorizontalAlignment="Left" Visibility="Hidden" Grid.Column="0" Style="{StaticResource BackButtonStyle}" Click="GoBack" />
+                <Button x:Name="exitButton" HorizontalAlignment="Right" Height="50" Width="50" Visibility="Visible"  Grid.Column="1" Click="ExitClick" />
 
                 <Image Grid.Column="1" Height="100" Width="100"  HorizontalAlignment="Left" VerticalAlignment="Center" Source="Images\Logo.png" Stretch="Fill" Margin="0 0 0 0"/>
                 <k:KinectUserViewer Grid.Column="1" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top" />
-                <TextBlock Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 -1 0" VerticalAlignment="Bottom" Foreground="{StaticResource MediumGreyBrush}" FontSize="18">Controls Basics</TextBlock>
+                
             </Grid>
 
-            <ContentControl Grid.Row="1" x:Name="navigationRegion" HorizontalAlignment="Center" Margin="136,0,73,0">
+            <ContentControl Grid.Row="1" x:Name="navigationRegion" HorizontalAlignment="Center" Margin="0,0,0,0">
                 <Grid x:Name="kinectRegionGrid" Margin="10,20,10,20">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="300" />

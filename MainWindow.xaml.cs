@@ -39,7 +39,16 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             app.KinectRegion = kinectRegion;
 
 
-           
+            Uri exitButton = new Uri("Assets/exit_button.png", UriKind.Relative);
+            StreamResourceInfo streamInfoEB = Application.GetResourceStream(exitButton);
+
+            BitmapFrame tempEB = BitmapFrame.Create(streamInfoEB.Stream);
+            var brushEB = new ImageBrush();
+            brushEB.ImageSource = tempEB;
+            this.exitButton.Background = brushEB;
+
+
+
 
             // Use the default sensor
             this.kinectRegion.KinectSensor = KinectSensor.GetDefault();
@@ -159,6 +168,12 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             navigationRegion.Content = this.kinectRegionGrid;
 
 
+        }
+
+
+        private void ExitClick(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

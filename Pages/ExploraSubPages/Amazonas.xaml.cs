@@ -27,7 +27,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages.ExploraSubPages
         private List<String> descAmazonas;
 
 
-        int puntero; 
+        int puntero;
+        List<int> indices;
 
         public Amazonas()
         {
@@ -35,13 +36,34 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages.ExploraSubPages
             uriAmazonas = new List<Uri>();
             titlesAmazonas = new List<String>();
             descAmazonas = new List<string>();
+            indices = new List<int>();
+
+            
 
             
             puntero = 0;
 
             LoadSpecies(uriAmazonas);
-            Uri resourceUri = new Uri("Images/ama_a_0.png", UriKind.Relative);
-            StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
+            Random r = new Random();
+            List<int> indicestemp = new List<int>();
+
+            for (int i = 0; i < uriAmazonas.Count; i++)
+            {
+                indicestemp.Add(i);
+            }
+
+            while( indicestemp.Count > 0 )
+            {
+                int rand = r.Next(0, indicestemp.Count);
+                indices.Add(indicestemp[rand]);
+                indicestemp.RemoveAt(rand);
+            }
+
+
+
+
+           
+            StreamResourceInfo streamInfo = Application.GetResourceStream(uriAmazonas[indices[0]]);
 
             BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
             this.Especie.Source = temp;
@@ -70,12 +92,14 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages.ExploraSubPages
 
 
             LoadTitles(titlesAmazonas);
-            this.Titulo.Text = titlesAmazonas[0];
+            this.Titulo.Text = titlesAmazonas[indices[0]];
 
             LoadDesc(descAmazonas);
-            this.Descripcion.Text = descAmazonas[0];
+            this.Descripcion.Text = descAmazonas[indices[0]];
 
         }
+
+     
 
 
 
@@ -85,14 +109,14 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages.ExploraSubPages
             if (puntero < uriAmazonas.Count - 1)
             {
                 puntero++;
-                Uri resourceUri = uriAmazonas[puntero];
+                Uri resourceUri = uriAmazonas[indices[puntero]];
                 StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
 
                 BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
                 this.Especie.Source = temp;
 
-                this.Titulo.Text = titlesAmazonas[puntero];
-                this.Descripcion.Text = descAmazonas[puntero];
+                this.Titulo.Text = titlesAmazonas[indices[puntero]];
+                this.Descripcion.Text = descAmazonas[indices[puntero]];
             }
 
         }
@@ -102,14 +126,14 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages.ExploraSubPages
             if (puntero > 0)
             {
                 puntero--;
-                Uri resourceUri = uriAmazonas[puntero];
+                Uri resourceUri = uriAmazonas[indices[puntero]];
                 StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
 
                 BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
                 this.Especie.Source = temp;
 
-                this.Titulo.Text = titlesAmazonas[puntero];
-                this.Descripcion.Text = descAmazonas[puntero];
+                this.Titulo.Text = titlesAmazonas[indices[puntero]];
+                this.Descripcion.Text = descAmazonas[indices[puntero]];
             }
 
         }

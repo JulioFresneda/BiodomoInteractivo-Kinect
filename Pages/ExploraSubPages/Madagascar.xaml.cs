@@ -24,6 +24,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages.ExploraSubPages
         private List<Uri> uriMadagascar;
         private List<String> titlesMadagascar;
         private List<String> descMadagascar;
+        private List<int> indices;
 
         int puntero;
 
@@ -33,12 +34,30 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages.ExploraSubPages
             uriMadagascar = new List<Uri>();
             titlesMadagascar = new List<string>();
             descMadagascar = new List<string>();
-
+            indices = new List<int>();
             LoadSpecies(uriMadagascar);
+
+            Random r = new Random();
+            List<int> indicestemp = new List<int>();
+
+            for (int i = 0; i < uriMadagascar.Count; i++)
+            {
+                indicestemp.Add(i);
+            }
+
+            while (indicestemp.Count > 0)
+            {
+                int rand = r.Next(0, indicestemp.Count);
+                indices.Add(indicestemp[rand]);
+                indicestemp.RemoveAt(rand);
+            }
+
+
+
             puntero = 0;
 
-            Uri resourceUri = new Uri("Images/mad_a_0.png", UriKind.Relative);
-            StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
+            
+            StreamResourceInfo streamInfo = Application.GetResourceStream(uriMadagascar[indices[0]]);
 
             BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
             this.Especie.Source = temp;
@@ -81,14 +100,14 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages.ExploraSubPages
             if (puntero < uriMadagascar.Count - 1)
             {
                 puntero++;
-                Uri resourceUri = uriMadagascar[puntero];
+                Uri resourceUri = uriMadagascar[indices[puntero]];
                 StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
 
                 BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
                 this.Especie.Source = temp;
 
-                this.Titulo.Text = titlesMadagascar[puntero];
-                this.Descripcion.Text = descMadagascar[puntero];
+                this.Titulo.Text = titlesMadagascar[indices[puntero]];
+                this.Descripcion.Text = descMadagascar[indices[puntero]];
             }
 
         }
@@ -98,14 +117,14 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages.ExploraSubPages
             if (puntero > 0)
             {
                 puntero--;
-                Uri resourceUri = uriMadagascar[puntero];
+                Uri resourceUri = uriMadagascar[indices[puntero]];
                 StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
 
                 BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
                 this.Especie.Source = temp;
 
-                this.Titulo.Text = titlesMadagascar[puntero];
-                this.Descripcion.Text = descMadagascar[puntero];
+                this.Titulo.Text = titlesMadagascar[indices[puntero]];
+                this.Descripcion.Text = descMadagascar[indices[puntero]];
             }
 
         }

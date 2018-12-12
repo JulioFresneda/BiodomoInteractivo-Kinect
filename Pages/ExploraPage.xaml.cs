@@ -30,11 +30,11 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         public ExploraPage()
         {
             this.InitializeComponent();
+            ExploraFrame.Content = new Amazonas();
 
-          
 
-          
-            
+
+
 
 
         }
