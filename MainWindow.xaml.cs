@@ -47,7 +47,11 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             brushEB.ImageSource = tempEB;
             this.exitButton.Background = brushEB;
 
+            Uri cabecera = new Uri("Assets/biodomoCabecera.png", UriKind.Relative);
+            StreamResourceInfo streamInfoCab = Application.GetResourceStream(cabecera);
 
+            BitmapFrame tempCab = BitmapFrame.Create(streamInfoCab.Stream);
+            this.cabeceraBiodomo.Source = tempCab;
 
 
             // Use the default sensor
