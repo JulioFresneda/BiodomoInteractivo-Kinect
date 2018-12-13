@@ -79,7 +79,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                 }
                 else if (button.Title == "Precios")
                 {
-                    Uri resourceUri = new Uri("Assets/preciosButton.png", UriKind.Relative);
+                    Uri resourceUri = new Uri("Assets/encuestaButton.png", UriKind.Relative);
                     StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
 
                     BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
@@ -88,8 +88,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
 
 
 
-                    this.preciosButton.DataContext = button;
-                    this.preciosButton.Background = brush;
+                    this.encuestaButton.DataContext = button;
+                    this.encuestaButton.Background = brush;
                 }
                 else if (button.Title == "Mapa")
                 {

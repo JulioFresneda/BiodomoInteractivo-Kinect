@@ -62,7 +62,7 @@
 
                         <Button Name="exploraButton" Click="ButtonClick" BorderThickness="0" Background="Transparent" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="250" Width="375" ></Button>
                         <Button Name="mapaButton" Click="ButtonClick" BorderThickness="0" Background="Transparent" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="250" Width="375" ></Button>
-                        <Button Name="preciosButton" Click="ButtonClick" BorderThickness="0" Background="Transparent" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="250" Width="375" ></Button>
+                        <Button Name="encuestaButton" Click="ButtonClick" BorderThickness="0" Background="Transparent" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="250" Width="375" ></Button>
                         <Button Name="redesButton" Click="ButtonClick" BorderThickness="0" Background="Transparent" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="250" Width="375" ></Button>
                     </Grid>
 
