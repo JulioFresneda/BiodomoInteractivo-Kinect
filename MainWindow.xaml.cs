@@ -77,7 +77,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                     this.exploraButton.DataContext = button;
                     this.exploraButton.Background = brush;
                 }
-                else if (button.Title == "Precios")
+                else if (button.Title == "Encuesta")
                 {
                     Uri resourceUri = new Uri("Assets/encuestaButton.png", UriKind.Relative);
                     StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);

@@ -88,11 +88,11 @@
     <Compile Include="Pages\ItemsControlsSample.xaml.cs">
       <DependentUpon>ItemsControlsSample.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\KinectPointerPointSample.xaml.cs">
-      <DependentUpon>KinectPointerPointSample.xaml</DependentUpon>
+    <Compile Include="Pages\RedesPage.xaml.cs">
+      <DependentUpon>RedesPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\MapaViewerPage.xaml.cs">
-      <DependentUpon>MapaViewerPage.xaml</DependentUpon>
+    <Compile Include="Pages\MapaPage.xaml.cs">
+      <DependentUpon>MapaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SliderSample.xaml.cs">
       <DependentUpon>SliderSample.xaml</DependentUpon>
@@ -148,11 +148,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\KinectPointerPointSample.xaml">
+    <Page Include="Pages\RedesPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\MapaViewerPage.xaml">
+    <Page Include="Pages\MapaPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -334,6 +334,16 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\biodomocabecera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\fbButton.png" />
+    <Resource Include="Assets\redescabecera.png" />
+    <Resource Include="Assets\twButton.png" />
+    <Resource Include="Assets\webButton.png" />
+    <Resource Include="Assets\ytButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\redesqr.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

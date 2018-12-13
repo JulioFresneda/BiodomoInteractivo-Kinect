@@ -67,7 +67,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.DataModel
             group1.Items.Add(
                     new DataItem(
                         "Group-1-Item-2",
-                        "Precios",
+                        "Encuesta",
                         string.Empty,
                         DataModel.mediumGrayImage,
                         "CheckBox and RadioButton controls",
@@ -83,7 +83,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.DataModel
                         "ScrollViewer control hosting a photo, enabling scrolling and zooming.",
                         itemContent,
                         group1,
-                        typeof(MapaViewer)));
+                        typeof(MapaPage)));
             group1.Items.Add(
                     new DataItem(
                         "Group-1-Item-6",
@@ -93,7 +93,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.DataModel
                         "Example of how to get KinectPointerPoints.",
                         itemContent,
                         group1,
-                        typeof(KinectPointerPointSample)));
+                        typeof(RedesPage)));
             group1.Items.Add(
                     new DataItem(
                         "Group-1-Item-7",
