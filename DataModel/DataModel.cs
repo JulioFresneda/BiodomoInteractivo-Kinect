@@ -67,13 +67,13 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.DataModel
             group1.Items.Add(
                     new DataItem(
                         "Group-1-Item-2",
-                        "Cuestionario",
+                        "Encuesta",
                         string.Empty,
                         DataModel.mediumGrayImage,
-                        "Cuestionario",
+                        "Encuesta",
                         itemContent,
                         group1,
-                        typeof(Cuestionario)));
+                        typeof(Encuesta)));
             group1.Items.Add(
                     new DataItem(
                         "Group-1-Item-5",

@@ -69,8 +69,8 @@
     <Compile Include="Pages\ExploraPage.xaml.cs">
       <DependentUpon>ExploraPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Cuestionario.xaml.cs">
-      <DependentUpon>Cuestionario.xaml</DependentUpon>
+    <Compile Include="Pages\Encuesta.xaml.cs">
+      <DependentUpon>Encuesta.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\EngagementSettings.xaml.cs">
       <DependentUpon>EngagementSettings.xaml</DependentUpon>
@@ -118,7 +118,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\Cuestionario.xaml">
+    <Page Include="Pages\Encuesta.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
