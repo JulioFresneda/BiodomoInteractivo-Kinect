@@ -67,13 +67,13 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.DataModel
             group1.Items.Add(
                     new DataItem(
                         "Group-1-Item-2",
-                        "Encuesta",
+                        "Cuestionario",
                         string.Empty,
                         DataModel.mediumGrayImage,
-                        "CheckBox and RadioButton controls",
+                        "Cuestionario",
                         itemContent,
                         group1,
-                        typeof(CheckBoxRadioButtonSample)));
+                        typeof(Cuestionario)));
             group1.Items.Add(
                     new DataItem(
                         "Group-1-Item-5",
@@ -321,8 +321,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.DataModel
     /// </summary>
     public class DataCollection : DataCommon, IEnumerable
     {
-        private ObservableCollection<DataItem> items = new ObservableCollection<DataItem>();
-        private ObservableCollection<DataItem> topItem = new ObservableCollection<DataItem>();
+        private readonly ObservableCollection<DataItem> items = new ObservableCollection<DataItem>();
+        private readonly ObservableCollection<DataItem> topItem = new ObservableCollection<DataItem>();
 
         public DataCollection(string uniqueId, string title, string subtitle, Uri imagePath, string description)
             : base(uniqueId, title, subtitle, imagePath, description)
