@@ -60,6 +60,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             indopacificoZone = new ZonePage(uriIndopacifico, titlesIndopacifico, descIndopacifico);
             madagascarZone = new ZonePage(uriMadagascar, titlesMadagascar, descMadagascar);
 
+            DrawButtons();
+
 
 
 
@@ -95,6 +97,40 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                 currentZone = "madagascar";
             }
 
+        }
+
+
+
+        private void DrawButtons()
+        {
+            Uri resourceUri = new Uri("Assets/amazoniaButton.png", UriKind.Relative);
+            StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
+
+            BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
+            var brush = new ImageBrush();
+            brush.ImageSource = temp;
+
+            this.amazoniaButton.Background = brush;
+
+
+            resourceUri = new Uri("Assets/madagascarButton.png", UriKind.Relative);
+            streamInfo = Application.GetResourceStream(resourceUri);
+
+            temp = BitmapFrame.Create(streamInfo.Stream);
+            brush = new ImageBrush();
+            brush.ImageSource = temp;
+
+            this.madagascarButton.Background = brush;
+
+
+            resourceUri = new Uri("Assets/indopacificoButton.png", UriKind.Relative);
+            streamInfo = Application.GetResourceStream(resourceUri);
+
+            temp = BitmapFrame.Create(streamInfo.Stream);
+            brush = new ImageBrush();
+            brush.ImageSource = temp;
+
+            this.indopacificoButton.Background = brush;
         }
 
 

@@ -10,24 +10,24 @@
 
     <Grid>
 
-        <ContentControl Grid.Row="1" x:Name="navigationRegion" HorizontalAlignment="Center">
+        <ContentControl x:Name="navigationRegion">
 
             <Grid Height="Auto" Width="Auto">
                 
 
                 <Grid.Background >
-                    <ImageBrush ImageSource="/Assets/grid_bg.png" Stretch="None"/>
+                    <ImageBrush ImageSource="/Assets/grid_bg.png" Stretch="UniformToFill"/>
                 </Grid.Background>
 
 
 
-                <StackPanel Orientation="Horizontal" Height="35" HorizontalAlignment="Center" VerticalAlignment="Top">
-                    <Button x:Name="amazoniaButton" Content="Amazonia" Click="ZoneClick" Height="35"/>
-                    <Button x:Name="madagascarButton" Content="Madagascar" Click="ZoneClick" Height="35"/>
-                    <Button x:Name="indopacificoButton" Content="IndoPacifico" Click="ZoneClick" Height="35"/>
+                <StackPanel Orientation="Horizontal" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Button x:Name="amazoniaButton" BorderThickness="0" Content="" Click="ZoneClick" Height="100" Width="400"/>
+                    <Button x:Name="madagascarButton" BorderThickness="0" Content="" Click="ZoneClick" Height="100" Width="400"/>
+                    <Button x:Name="indopacificoButton" BorderThickness="0" Content="" Click="ZoneClick" Height="100" Width="400"/>
                 </StackPanel>
 
-                <Frame x:Name="ExploraFrame" Margin="0,35,0,0" NavigationUIVisibility="Hidden" />
+                <Frame x:Name="ExploraFrame" Margin="0,200,0,0" NavigationUIVisibility="Hidden" Width="1200" />
 
 
 
