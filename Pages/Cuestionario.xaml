@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Microsoft.Samples.Kinect.ControlsBasics.CheckBoxRadioButtonSample"
+﻿<UserControl x:Class="Microsoft.Samples.Kinect.ControlsBasics.Cuestionario"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -28,7 +28,7 @@
             </Grid.ColumnDefinitions>
 
             <!-- Que zona te ha gustado más -->
-            <StackPanel Orientation="Vertical" Margin="10,0,0,6">
+            <StackPanel Orientation="Vertical" Margin="10,0,0,5">
                 <TextBlock Style="{StaticResource HeaderStyle}">¿Que zona te ha gustado más?</TextBlock>
                 <RadioButton GroupName="RadioButtonGroup" Content="Amazonia" Style="{StaticResource RadioButtonStyle}" Margin="10,0,0,0" />
                 <RadioButton GroupName="RadioButtonGroup" Content="Indo-Pacífico" Style="{StaticResource RadioButtonStyle}" Margin="10,0,0,0" />
@@ -52,5 +52,6 @@
                 <CheckBox Content="Conocimiento de los guías" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" />
             </StackPanel>
         </Grid>
+        
     </Grid>
 </UserControl>
