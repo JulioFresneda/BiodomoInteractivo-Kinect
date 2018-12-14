@@ -13,9 +13,9 @@
         </Grid.Background>
         
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="280"/>
+            <RowDefinition Height="580"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
@@ -23,12 +23,9 @@
         <TextBlock x:Name="pageTitle" Text="Cuestionario de calidad" TextAlignment="Center" />
 
         <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto" />
-            </Grid.ColumnDefinitions>
 
             <!-- Que zona te ha gustado más -->
-            <StackPanel Orientation="Vertical" Margin="10,0,0,5" Height="67">
+            <StackPanel Orientation="Vertical" Margin="10,0,0,5" Height="300">
                 <TextBlock Style="{StaticResource HeaderStyle}">¿Que zona te ha gustado más?</TextBlock>
                 <RadioButton GroupName="RadioButtonGroup" Content="Amazonia" Style="{StaticResource RadioButtonStyle}" Margin="10,0,0,0" />
                 <RadioButton GroupName="RadioButtonGroup" Content="Indo-Pacífico" Style="{StaticResource RadioButtonStyle}" Margin="10,0,0,0" />
@@ -38,11 +35,8 @@
         </Grid>
 
         <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto" />
-            </Grid.ColumnDefinitions>
             <!-- Que destacarías del Biodomo (Posibilidad de varias opciones) -->
-            <StackPanel Orientation="Vertical" Margin="10,0,0,0" Height="108">
+            <StackPanel Orientation="Vertical" Margin="10,0,0,0" Height="600">
                 <TextBlock Style="{StaticResource HeaderStyle}">¿Que destacarías del Biodomo?</TextBlock>
                 <CheckBox Content="Buen servicio" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" />
                 <CheckBox Content="Amabilidad" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" />
@@ -54,10 +48,7 @@
         </Grid>
 
         <Grid Grid.Row="3">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto" />
-            </Grid.ColumnDefinitions>
-            
+
         </Grid>
 
     </Grid>
