@@ -22,9 +22,9 @@
 
 
                 <StackPanel Orientation="Horizontal" Height="35" HorizontalAlignment="Center" VerticalAlignment="Top">
-                    <Button x:Name="amazonasButton" Content="Amazonas" Click="AmazonasClick" Height="35"/>
-                    <Button x:Name="madagascarButton" Content="Madagascar" Click="MadagascarClick" Height="35"/>
-                    <Button x:Name="indopacificoButton" Content="IndoPacifico" Click="IndopacificoClick" Height="35"/>
+                    <Button x:Name="amazoniaButton" Content="Amazonia" Click="ZoneClick" Height="35"/>
+                    <Button x:Name="madagascarButton" Content="Madagascar" Click="ZoneClick" Height="35"/>
+                    <Button x:Name="indopacificoButton" Content="IndoPacifico" Click="ZoneClick" Height="35"/>
                 </StackPanel>
 
                 <Frame x:Name="ExploraFrame" Margin="0,35,0,0" NavigationUIVisibility="Hidden" />

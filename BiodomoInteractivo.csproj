@@ -76,15 +76,6 @@
       <DependentUpon>EngagementSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="HandPointers\HandOverHeadEngagementModel.cs" />
-    <Compile Include="Pages\ExploraSubPages\Indopacifico.xaml.cs">
-      <DependentUpon>Indopacifico.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\ExploraSubPages\Madagascar.xaml.cs">
-      <DependentUpon>Madagascar.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\ExploraSubPages\Amazonas.xaml.cs">
-      <DependentUpon>Amazonas.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\ItemsControlsSample.xaml.cs">
       <DependentUpon>ItemsControlsSample.xaml</DependentUpon>
     </Compile>
@@ -96,6 +87,9 @@
     </Compile>
     <Compile Include="Pages\SliderSample.xaml.cs">
       <DependentUpon>SliderSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ZonePage.xaml.cs">
+      <DependentUpon>ZonePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="SelectionDisplay.xaml.cs">
       <DependentUpon>SelectionDisplay.xaml</DependentUpon>
@@ -132,18 +126,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\ExploraSubPages\Indopacifico.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\ExploraSubPages\Madagascar.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\ExploraSubPages\Amazonas.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\ItemsControlsSample.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -159,6 +141,10 @@
     <Page Include="Pages\SliderSample.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\ZonePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SelectionDisplay.xaml">
       <SubType>Designer</SubType>

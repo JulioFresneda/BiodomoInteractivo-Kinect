@@ -15,7 +15,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
     using Microsoft.Kinect;
     using Microsoft.Kinect.Wpf.Controls;
     using Microsoft.Samples.Kinect.ControlsBasics.DataModel;
-    using Microsoft.Samples.Kinect.ControlsBasics.Pages.ExploraSubPages;
+ 
 
     /// <summary>
     /// A sample showing a visualization of PointerPoints from Kinect
