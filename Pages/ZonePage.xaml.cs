@@ -138,15 +138,33 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
         private void DrawButtons()
         {
 
-            if( currentZone == "amazonia")
+            Uri leftButtonUri = new Uri("Assets/explora_button_left_ama.png", UriKind.Relative);
+            Uri rightButtonUri = new Uri("Assets/explora_button_right_ama.png", UriKind.Relative);
+
+            if ( currentZone == "amazonia")
             {
                 this.Titulo.Background = new SolidColorBrush(Color.FromArgb(0xff,0xff,0xd3,0x00));
+                leftButtonUri = new Uri("Assets/explora_button_left_ama.png", UriKind.Relative);
+                rightButtonUri = new Uri("Assets/explora_button_right_ama.png", UriKind.Relative);
             }
-            
+            if (currentZone == "madagascar")
+            {
+                
+                this.Titulo.Background = new SolidColorBrush(Color.FromArgb(0xff, 0xc2, 0x00, 0x17));
+                leftButtonUri = new Uri("Assets/explora_button_left_mad.png", UriKind.Relative);
+                rightButtonUri = new Uri("Assets/explora_button_right_mad.png", UriKind.Relative);
+            }
+            if (currentZone == "indopacifico")
+            {
+                this.Titulo.Background = new SolidColorBrush(Color.FromArgb(0xff, 0x00, 0xd1, 0xb6));
+                leftButtonUri = new Uri("Assets/explora_button_left_ip.png", UriKind.Relative);
+                rightButtonUri = new Uri("Assets/explora_button_right_ip.png", UriKind.Relative);
+            }
 
 
 
-            Uri leftButtonUri = new Uri("Assets/explora_button_left_ama.png", UriKind.Relative);
+
+
             StreamResourceInfo streamInfo = Application.GetResourceStream(leftButtonUri);
 
             BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
@@ -157,7 +175,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
 
 
 
-            Uri rightButtonUri = new Uri("Assets/explora_button_right_ama.png", UriKind.Relative);
+            
             streamInfo = Application.GetResourceStream(rightButtonUri);
 
             temp = BitmapFrame.Create(streamInfo.Stream);
