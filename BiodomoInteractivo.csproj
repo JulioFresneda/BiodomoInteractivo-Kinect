@@ -69,8 +69,8 @@
     <Compile Include="Pages\ExploraPage.xaml.cs">
       <DependentUpon>ExploraPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\CheckBoxRadioButtonSample.xaml.cs">
-      <DependentUpon>CheckBoxRadioButtonSample.xaml</DependentUpon>
+    <Compile Include="Pages\Cuestionario.xaml.cs">
+      <DependentUpon>Cuestionario.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\EngagementSettings.xaml.cs">
       <DependentUpon>EngagementSettings.xaml</DependentUpon>
@@ -118,7 +118,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\CheckBoxRadioButtonSample.xaml">
+    <Page Include="Pages\Cuestionario.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
