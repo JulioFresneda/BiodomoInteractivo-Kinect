@@ -56,9 +56,9 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             LoadTitles();
             LoadDesc();
 
-            amazoniaZone = new ZonePage(uriAmazonia, titlesAmazonia, descAmazonia);
-            indopacificoZone = new ZonePage(uriIndopacifico, titlesIndopacifico, descIndopacifico);
-            madagascarZone = new ZonePage(uriMadagascar, titlesMadagascar, descMadagascar);
+            amazoniaZone = new ZonePage(uriAmazonia, titlesAmazonia, descAmazonia,"amazonia");
+            indopacificoZone = new ZonePage(uriIndopacifico, titlesIndopacifico, descIndopacifico,"indopacifico");
+            madagascarZone = new ZonePage(uriMadagascar, titlesMadagascar, descMadagascar,"madagascar");
 
             DrawButtons();
 

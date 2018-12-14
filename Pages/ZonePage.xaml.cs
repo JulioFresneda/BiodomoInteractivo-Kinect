@@ -32,10 +32,10 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
         List<String> titleList;
         List<String> descList;
 
+        private String currentZone;
 
 
-
-        public ZonePage( List<Uri> _uriList, List<String> _titleList, List<String> _descList )
+        public ZonePage( List<Uri> _uriList, List<String> _titleList, List<String> _descList, String _currentZone )
         {
             InitializeComponent();
             puntero = 0;
@@ -46,6 +46,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
             titleList = _titleList;
             descList = _descList;
 
+            currentZone = _currentZone;
 
             Random r = new Random();
             List<int> indicestemp = new List<int>();
@@ -81,6 +82,15 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
 
             
             this.Descripcion.Text = descList[indices[0]];
+
+
+
+            
+
+
+
+
+
 
         }
 
@@ -127,6 +137,12 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
 
         private void DrawButtons()
         {
+
+            if( currentZone == "amazonia")
+            {
+                this.Titulo.Background = new SolidColorBrush(Color.FromArgb(0xff,0xff,0xd3,0x00));
+            }
+            
 
 
 

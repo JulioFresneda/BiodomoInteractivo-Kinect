@@ -19,18 +19,18 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="450"/> 
         </Grid.RowDefinitions>
-        
-        
 
 
-        
 
-        <Button x:Name="Left" Margin="0,100,0,0" HorizontalAlignment="Stretch" Grid.Column="2" Height="75" Width="50" Click="LeftClick"/>
-        <Button x:Name="Right" Margin="0,-100,0,0" HorizontalAlignment="Stretch" Grid.Column="2" Height="75" Width="50" Click="RightClick"/>
-        <Image x:Name="Especie"  Height="1000" HorizontalAlignment="Right" Grid.Column="0" />
 
-        <TextBlock x:Name="Titulo" Text="Titulo" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Width="500" Height="50"/>
-        <TextBox x:Name="Descripcion" BorderThickness="0" HorizontalAlignment="Left"  Height="300" Width="500" TextWrapping="Wrap" VerticalAlignment="Bottom" Grid.Column="1"/>
+
+
+        <Button x:Name="Left" BorderThickness="0" Margin="0,100,0,0" HorizontalAlignment="Stretch" Grid.Column="2" Height="75" Width="50" Click="LeftClick"/>
+        <Button x:Name="Right" BorderThickness="0" Margin="0,-100,0,0" HorizontalAlignment="Stretch" Grid.Column="2" Height="75" Width="50" Click="RightClick"/>
+        <Image x:Name="Especie"  Height="400" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="0" />
+
+        <TextBlock FontSize="25"  Margin="10,50,0,0" x:Name="Titulo" Text="Titulo" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Width="500" Height="40"/>
+        <TextBox Margin="10,0,0,0" x:Name="Descripcion" FontSize="20" BorderThickness="0" HorizontalAlignment="Left"  Height="360" Width="500" TextWrapping="Wrap" VerticalAlignment="Bottom" Grid.Column="1"/>
 
     </Grid>
 </Page>
