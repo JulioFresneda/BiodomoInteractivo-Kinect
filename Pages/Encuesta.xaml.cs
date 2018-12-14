@@ -8,17 +8,19 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
 {
     using System;
     using System.Collections.Generic;
+    using Microsoft.Samples.Kinect.ControlsBasics.Pages;
 
-    public partial class Cuestionario
+    public partial class Encuesta
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Cuestionario"/> class. 
+        /// Initializes a new instance of the <see cref="Encuesta"/> class. 
         /// </summary>
         /// 
 
         private List<Uri> uriFace;
+        private ZonePage encuestaZone;
 
-        public Cuestionario()
+        public Encuesta()
         {
             this.InitializeComponent();
             this.LoadImages();

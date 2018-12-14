@@ -73,7 +73,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.DataModel
                         "Encuesta",
                         itemContent,
                         group1,
-                        typeof(Cuestionario)));
+                        typeof(Encuesta)));
             group1.Items.Add(
                     new DataItem(
                         "Group-1-Item-5",
