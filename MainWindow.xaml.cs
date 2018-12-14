@@ -47,6 +47,14 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             brushEB.ImageSource = tempEB;
             this.exitButton.Background = brushEB;
 
+            Uri minimizeButton = new Uri("Assets/minimize_button.png", UriKind.Relative);
+            streamInfoEB = Application.GetResourceStream(minimizeButton);
+
+            tempEB = BitmapFrame.Create(streamInfoEB.Stream);
+            brushEB = new ImageBrush();
+            brushEB.ImageSource = tempEB;
+            this.minimizeButton.Background = brushEB;
+
             Uri cabecera = new Uri("Assets/biodomoCabecera.png", UriKind.Relative);
             StreamResourceInfo streamInfoCab = Application.GetResourceStream(cabecera);
 
@@ -178,6 +186,11 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         private void ExitClick(object sender, RoutedEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
+        }
+
+        private void MinimizeClick(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
         }
     }
 }

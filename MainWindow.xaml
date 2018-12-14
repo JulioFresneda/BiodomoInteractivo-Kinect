@@ -35,6 +35,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Button x:Name="backButton" HorizontalAlignment="Left" Visibility="Hidden" Grid.Column="0" Style="{StaticResource BackButtonStyle}" Click="GoBack" />
+                <Button x:Name="minimizeButton" Margin="0,0,100,0" BorderThickness="0" HorizontalAlignment="Right" Height="100" Width="100" Visibility="Visible"  Grid.Column="2" Click="MinimizeClick" />
                 <Button x:Name="exitButton" BorderThickness="0" HorizontalAlignment="Right" Height="100" Width="100" Visibility="Visible"  Grid.Column="2" Click="ExitClick" />
 
 
