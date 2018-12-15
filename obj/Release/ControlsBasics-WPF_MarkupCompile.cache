@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Julio\Source\Repos\Kinect-Biodomo\obj\Release\
+C:\Users\juane\Documents\0.github\KinectNPI\github\Kinect-Biodomo\obj\Release\
 Microsoft.Samples.Kinect.ControlsBasics
 none
 false
 TRACE
-C:\Users\Julio\Source\Repos\Kinect-Biodomo\App.xaml
-11-125873232
+C:\Users\juane\Documents\0.github\KinectNPI\github\Kinect-Biodomo\App.xaml
+13-179713216
 
-16-604399233
-14546822785
-Common\StandardStyles.xaml;HandPointers\HandPointerStyles.xaml;MainWindow.xaml;Pages\ButtonSample.xaml;Pages\CheckBoxRadioButtonSample.xaml;Pages\EngagementSettings.xaml;Pages\ItemsControlsSample.xaml;Pages\KinectPointerPointSample.xaml;Pages\ScrollViewerSample.xaml;Pages\SliderSample.xaml;SelectionDisplay.xaml;
+19-742298295
+15710215562
+Common\StandardStyles.xaml;HandPointers\HandPointerStyles.xaml;MainWindow.xaml;Pages\ExploraPage.xaml;Pages\Encuesta.xaml;Pages\EngagementSettings.xaml;Pages\FullScreenImage.xaml;Pages\ItemsControlsSample.xaml;Pages\RedesPage.xaml;Pages\MapaPage.xaml;Pages\SliderSample.xaml;Pages\ZonePage.xaml;SelectionDisplay.xaml;
 
 True
 
