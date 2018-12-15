@@ -85,7 +85,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
 
 
 
-            
+            Left.Visibility = Visibility.Hidden;
 
 
 
@@ -103,6 +103,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
         {
             if (puntero < uriList.Count - 1)
             {
+                Left.Visibility = Visibility.Visible;
                 puntero++;
                 Uri resourceUri = uriList[indices[puntero]];
                 StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
@@ -112,6 +113,11 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
 
                 this.Titulo.Text = titleList[indices[puntero]];
                 this.Descripcion.Text = descList[indices[puntero]];
+
+                if( puntero == uriList.Count-1)
+                {
+                    Right.Visibility = Visibility.Hidden;
+                }
             }
 
         }
@@ -120,6 +126,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
         {
             if (puntero > 0)
             {
+                Right.Visibility = Visibility.Visible;
                 puntero--;
                 Uri resourceUri = uriList[indices[puntero]];
                 StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
@@ -129,6 +136,11 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
 
                 this.Titulo.Text = titleList[indices[puntero]];
                 this.Descripcion.Text = descList[indices[puntero]];
+
+                if( puntero == 0)
+                {
+                    Left.Visibility = Visibility.Hidden;
+                }
             }
 
         }
