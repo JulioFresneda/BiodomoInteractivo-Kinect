@@ -37,10 +37,10 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         public Encuesta()
         {
             this.InitializeComponent();
-            this.LoadImages();
+            this.PrintImages();
         }
 
-        private void LoadImages()
+        private void PrintImages()
         {
             if (smiley == true)
             {
