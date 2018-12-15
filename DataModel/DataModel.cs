@@ -80,7 +80,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.DataModel
                         "Mapa",
                         string.Empty,
                         DataModel.lightGrayImage,
-                        "ScrollViewer control hosting a photo, enabling scrolling and zooming.",
+                        "Navigation throught mapa image of Biodomo (scrollViewer, zoom).",
                         itemContent,
                         group1,
                         typeof(MapaPage)));
@@ -90,20 +90,10 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.DataModel
                         "Redes Sociales",
                         string.Empty,
                         DataModel.lightGrayImage,
-                        "Example of how to get KinectPointerPoints.",
+                        "Select checkbox and radio buttons and detect face gesture.",
                         itemContent,
                         group1,
                         typeof(RedesPage)));
-            group1.Items.Add(
-                    new DataItem(
-                        "Group-1-Item-7",
-                        "Engagement and Cursor Settings",
-                        "",
-                        DataModel.darkGrayImage,
-                        "Enables user to switch between engagement models and cursor visuals.",
-                        itemContent,
-                        group1,
-                        typeof(EngagementSettings)));
             
             this.AllGroups.Add(group1);
 

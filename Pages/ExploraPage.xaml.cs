@@ -18,9 +18,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
     using Microsoft.Samples.Kinect.ControlsBasics.DataModel;
     using Microsoft.Samples.Kinect.ControlsBasics.Pages;
   
-
-
-
+    
     /// <summary>
     /// Interaction logic for MainWindow
     /// </summary>
@@ -68,23 +66,40 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             DrawButtons();
 
             imageInFullScreen = false;
-
-
+            
             oldHeightFrame = ExploraFrame.Height;
             oldWidthFrame = ExploraFrame.Width;
-
 
             currentZonePage = amazoniaZone;
             ExploraFrame.Content = currentZonePage;
             currentZone = "amazonia";
 
+            GestureDetector gestureDetector = new GestureDetector();
 
+            gestureDetector.GestoDetectado += (s, argss) =>
+            {
+                SwipedArgs arg = (SwipedArgs)argss;
 
+                if (arg.GestureType == "left")
+                {
+                    //this.detectedGesto.Text = "To the left";
+                    currentZonePage.LeftClick();
+                }
+                else if (arg.GestureType == "right")
+                {
+                    //this.detectedGesto.Text = "To the right";
+                    currentZonePage.RightClick();
+                }
+                else if (arg.GestureType == "hand")
+                {
+                    FullScreenImageClick();
+                }
+            };
 
-
-
-
-
+            gestureDetector.GestoNoDetectado += (s, argss) =>
+            {
+               // this.detectedGesto.Text = "Gesto no detectado";
+            };
         }
 
         private void ZoneClick(object sender, RoutedEventArgs e)
@@ -122,13 +137,11 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         }
 
 
-        private void FullScreenImageClick(object sender, RoutedEventArgs e)
+        private void FullScreenImageClick()
         {
             if (!imageInFullScreen)
             {
                 Uri imageUri = currentZonePage.GetCurrentImage();
-
-                
 
                 ExploraFrame.Width = 1352;
                 ExploraFrame.Height = 900;
@@ -150,23 +163,40 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                 ExploraFrame.Margin = margin;
                 imageInFullScreen = false;
             }
-
-
         }
 
+        private void FullScreenImageClick(object sender, RoutedEventArgs e)
+        {
+            if (!imageInFullScreen)
+            {
+                Uri imageUri = currentZonePage.GetCurrentImage();
+                
+                ExploraFrame.Width = 1352;
+                ExploraFrame.Height = 900;
 
+                ExploraFrame.Content = new FullScreenImage(imageUri);
+                Thickness margin = ExploraFrame.Margin;
+                margin.Top = -100;
+                ExploraFrame.Margin = margin;
+                imageInFullScreen = true;
+            }
+            else
+            {
+                ExploraFrame.Height = oldHeightFrame;
+                ExploraFrame.Width = oldWidthFrame;
 
+                ExploraFrame.Content = currentZonePage;
+                Thickness margin = ExploraFrame.Margin;
+                margin.Top = 100;
+                ExploraFrame.Margin = margin;
+                imageInFullScreen = false;
+            }
+        }
+        
         private void DrawButtons()
         {
-            
-
-
-
             DrawFullScreenButton();
-
-  
-           
-
+            
             Uri resourceUri = new Uri("Assets/amazoniaButton.png", UriKind.Relative);
             StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
 
@@ -195,12 +225,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             brush.ImageSource = temp;
 
             this.indopacificoButton.Background = brush;
-
-
-            
         }
-
-
+        
         private void DrawFullScreenButton()
         {
             Uri fullscreenButtonUri = new Uri("Assets/fullscreenButton_ama.png", UriKind.Relative);
@@ -217,8 +243,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             {
                 fullscreenButtonUri = new Uri("Assets/fullscreenButton_ip.png", UriKind.Relative);
             }
-
-
+            
             StreamResourceInfo streamInfo = Application.GetResourceStream(fullscreenButtonUri);
 
             BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
@@ -228,37 +253,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
         private void LoadSpecies()
         {
             uriAmazonia = new List<Uri>();
@@ -370,16 +365,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
 
 
         }
-
-
-
-
-
-
-
-
-
-
+        
 
         private void LoadTitles()
         {
@@ -515,12 +501,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             descAmazonia.Add("Pteroglossus viridis. Es un pequeño tucán que vive en la espesura del bosque en grupos reducidos. Se alimenta de frutos, flores, insectos y huevos de aves. Construye los nidos en huecos de árboles o aprovecha los nidos abandonados de pájaros carpinteros donde pone de 2 a 4 huevos. El macho y la hembra comparten la incubación y el cuidado de las crías.");
             descAmazonia.Add("Callithrix geoffroyi. Es un pequeño primate endémico de los bosques atlánticos de Brasil. Es diurno y arbóreo. Vive en grupos familiares con una hambre dominante que es la única que se reproduce. Es monógamo. Se alimenta de frutas e invertebrados y emite muchos sonidos que representan emociones y estados de ánimo.");
 
-
-
-
-
-
-
+            
 
             descAmazonia.Add("Erythrina crista–galli. Es un pequeño árbol caduco de 5–10 m de altura nativo de la región del Paraná (Norte de Argentina, Paraguay y Sur de Brasil). Crece en bosques galería a lo largo de los ríos y en zonas inundables. El tallo es irregular y contiene alcaloides cuya ingestión puede producir toxicidad. Las ramas tienen espinas. Las flores, de color rojo brillante,  son melíferas y el néctar atrae a insectos y aves. Las raíces presentan nódulos con bacterias fijadoras de nitrógeno. Se usa como planta medicinal y ornamental.");
             descAmazonia.Add("Bougainvillea glabra. Arbusto sarmentoso originario de Brasil. Perenne, trepador y leñoso con espinas en sus ramas que le permiten agarrarse a un soporte. Tiene hojas verdes brillantes. Las ﬂores son pequeñas y blancas y están rodeadas de unas brácteas caducas de color rojo intenso. Tiene propiedades medicinales contra las afecciones gastrointestinales y respiratorias.");
@@ -539,11 +520,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             descAmazonia.Add("Thevetia peruviana. Arbusto originario de América tropical que alcanza 5 m. Perenne. Tiene la corteza grisácea y las hojas duras, lanceoladas, de color verde oscuro vivo. Las ﬂores son amarillas y perfumadas en forma de embudo. El fruto es una drupa carnosa  roja redondeada. Desde hace cientos de años se utiliza en medicina tradicional para reducir grasa. Es ornamental.");
             descAmazonia.Add("Acoelorraphe wrightii. Pequeña palmera natural de Florida y áreas tropicales húmedas de América Central y el Caribe, donde se encuentra silvestre en muchos ambientes, incluidas áreas salinas, pantanos y bosques periódicamente inundados. El tronco está cubierto de ﬁbras y las hojas son grandes en forma de abanico con espinas aserradas en los márgenes. Flores diminutas blancas y hermafroditas.");
 
-
-
-
-
-
+            
             descMadagascar.Add("Lemur catta. Es un primate de hábitos estrictamente diurnos que pasa la mayor parte del tiempo en los árboles, aunque también frecuenta el suelo. Es sociable y vive en grupos de 5 a 25 individuos. Es polígamo y usa su característica cola para hacer señales visuales y odoríferas. Cuando camina por el suelo mantiene erguida la cola para señalar su presencia al resto de sus congéneres. También se comunica por vocalizaciones, por actitudes corporales y por expresiones del rostro. Se alimenta de frutos, hojas, flores, cortezas y pequeños insectos.");
             descMadagascar.Add("Gromphadorhina portentosa. Es una de las mayores cucarachas que existen. Carece de alas y es una excelente escaladora. Progenitores y crías permanecen juntos largos periodos de tiempo. Pueden expulsar aire por los poros respiratorios del abdomen produciendo un sonido característico. Vive en la madera muerta y come restos vegetales.");
             descMadagascar.Add("Tauraco leucotis. Ave de vivos colores y una cresta sobre la cabeza que pueden levantar a voluntad. Sus colores rojo y verde se deben a pigmentos producidos por esta a ve. Es ruidosa y emite una penetrante llamada de alarma. Construye nidos grandes y sencillos con ramas y pone dos huevos. Come frutas y pequeños artrópodos. Es endémica del este africano.");
@@ -566,14 +543,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             descMadagascar.Add("Strelitzia alba. Herbácea nativa de Sudáfrica y Madagascar. Es la más alta de las Sterlitzias con una altura de 10 m y una de las tres arborescentes junto a S. nicolai. y S. caudata. Las hojas son alternas con nervadura central marcada, ovales y de peciolo largo. Están dispuestas en dos ﬁlas a lo largo de un eje y crecen helicoidalmente. Las ﬂores son hermafroditas, blancas, encerradas en una espata de color púrpura. El fruto es una cápsula con arilo lanoso de color rojo brillante.");
 
 
-
-
-
-
-
-
-
-
+            
             descIndopacifico.Add("Himantura uarnak. Vive en bahías de arena y lagunas salobres asociadas a arrecifes coralinos hasta 50 m de profundidad. Tolera bajos niveles de salinidad por lo que a veces se adentra en zonas de manglar. Alcanza 2 m. Es nocturna y durante el día se esconde en la arena. Come peces, cangrejos y medusas.");
             descIndopacifico.Add("Odonus niger. Vive en zonas de corriente próximas a los arrecifes y fondos coralinos. Alcanza 50 cm. Tiene la piel dura y resistente que lo hace inmune a enfermedades parasitarias. Dispone de espinas dorsales para defenderse. Sus dientes, de color rojo, son capaces de romper el arrecife. Se alimenta de invertebrados.");
             descIndopacifico.Add("Naso lituratus. Vive en lagunas interiores y en arrecifes de coral. Alcanza 45 cm. Tiene el cuerpo comprimido lateralmente y posee un agudo aguijón extensible en la aleta caudal para defensa. Es gris con líneas amarillas y azules en los contornos, pero oscurece rápidamente si se encuentra estresado. Se alimenta de algas. Tiene dimorfismo sexual. Es solitario pero a veces forma cardúmenes.");
@@ -609,7 +579,5 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             descIndopacifico.Add("Ficus macrophylla. Árbol nativo de la costa Este de Australia aunque está muy extendido por Sudamérica. Es perenne y sus hojas recuerdan a las del magnolio. Las semillas germinan en la copa de un árbol huésped. Vive como epíﬁta hasta que las raíces llegan al suelo. Entonces se alarga y estrangula al huésped convirtiéndose en un árbol independiente. Sus raíces aéreas le permiten extender ampliamente su copa.");
 
         }
-
-        
     }
 }

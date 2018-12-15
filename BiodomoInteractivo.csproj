@@ -66,6 +66,7 @@
     </ApplicationDefinition>
     <Compile Include="Common\BindableBase.cs" />
     <Compile Include="DataModel\DataModel.cs" />
+    <Compile Include="GestureDetector.cs" />
     <Compile Include="HandPointers\HandInScreenEngagementModel.cs" />
     <Compile Include="Pages\ExploraPage.xaml.cs">
       <DependentUpon>ExploraPage.xaml</DependentUpon>
@@ -73,15 +74,9 @@
     <Compile Include="Pages\Encuesta.xaml.cs">
       <DependentUpon>Encuesta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\EngagementSettings.xaml.cs">
-      <DependentUpon>EngagementSettings.xaml</DependentUpon>
-    </Compile>
     <Compile Include="HandPointers\HandOverHeadEngagementModel.cs" />
     <Compile Include="Pages\FullScreenImage.xaml.cs">
       <DependentUpon>FullScreenImage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\ItemsControlsSample.xaml.cs">
-      <DependentUpon>ItemsControlsSample.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RedesPage.xaml.cs">
       <DependentUpon>RedesPage.xaml</DependentUpon>
@@ -89,15 +84,13 @@
     <Compile Include="Pages\MapaPage.xaml.cs">
       <DependentUpon>MapaPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SliderSample.xaml.cs">
-      <DependentUpon>SliderSample.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\ZonePage.xaml.cs">
       <DependentUpon>ZonePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="SelectionDisplay.xaml.cs">
       <DependentUpon>SelectionDisplay.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SwipedArgs.cs" />
     <Page Include="Common\StandardStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -126,27 +119,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\EngagementSettings.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Pages\FullScreenImage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\ItemsControlsSample.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\RedesPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\MapaPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\SliderSample.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -358,6 +339,9 @@
     <Resource Include="Assets\smiley.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.Kinect.Face\2.0\Redist\CommonConfiguration\x64\NuiDatabase" "NuiDatabase" /e /y /i /r</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
