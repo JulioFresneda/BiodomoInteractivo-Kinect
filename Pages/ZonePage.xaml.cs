@@ -16,24 +16,33 @@ using System.Windows.Shapes;
 
 namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
 {
-	/// <summary>
-	/// Interaction logic for Amazonia.xaml
-	/// </summary>
+	// Clase que contiene el visor de imágenes de cada zona. 
+    // Esta clase contiene la información de UNA ÚNICA zona, así como los botones de derecha e izquierda.
 	public partial class ZonePage : Page
 	{
+
+        // Puntero el cual nos dice en qué posición estamos
 		private int puntero;
+
+        // Lista de índices, la usaremos para mostrar las especies de forma desordenada
 		List<int> indices;
 
+        // Listas con las Uri de imágenes, los títulos y las descripciones de las especies de la zona en concreto
 		List<Uri> uriList;
 		List<String> titleList;
 		List<String> descList;
 
+        // Contiene el nombre de la zona actual
 		private String currentZone;
 
 
+        // Para crear un ZonePage, se necesita una lista de direcciones de imágenes, otra de títulos y otra de descripciones,
+        // así como el nombre de la zona actual
 		public ZonePage(List<Uri> _uriList, List<String> _titleList, List<String> _descList, String _currentZone)
 		{
 			InitializeComponent();
+
+            //Inicializamos variables
 			puntero = 0;
 			indices = new List<int>();
             
@@ -43,6 +52,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
 
 			currentZone = _currentZone;
 
+            // Llenamos nuestra lista de índices con números entre 0 y nº especies -1, ordenados aleatoriamente
 			Random r = new Random();
 			List<int> indicestemp = new List<int>();
             
@@ -57,24 +67,33 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
 				indicestemp.RemoveAt(rand);
 			}
 
+
+            // Cargamos la imagen, título y descripción de la primera especie
 			StreamResourceInfo streamInfo = Application.GetResourceStream(uriList[indices[0]]);
 
 			BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
 			this.Especie.Source = temp;
 
-			DrawButtons();
+            this.Titulo.Text = titleList[indices[0]];
+            this.Descripcion.Text = descList[indices[0]];
+            Left.Visibility = Visibility.Hidden; // Al ser la primera especie, desactivamos el botón de ir a la izquierda
+
+            // Dibujamos los botones
+            DrawButtons();
             
-			this.Titulo.Text = titleList[indices[0]];
-			this.Descripcion.Text = descList[indices[0]];
-			Left.Visibility = Visibility.Hidden;
+			
 		}
 
+        // Pasamos hacia el siguiente animal
         public void RightClick()
         {
             if (puntero < uriList.Count - 1)
             {
-                Left.Visibility = Visibility.Visible;
+                // El botón de pasar a la izquierda ahora es visible
+                if( puntero == 0 ) Left.Visibility = Visibility.Visible;
                 puntero++;
+
+                // Cargamos imagen, título y descripción de la siguiente especie
                 Uri resourceUri = uriList[indices[puntero]];
                 StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
 
@@ -84,6 +103,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
                 this.Titulo.Text = titleList[indices[puntero]];
                 this.Descripcion.Text = descList[indices[puntero]];
 
+                // Si estamos en la última especie, hacemos el botón de siguiente invisible
                 if (puntero == uriList.Count - 1)
                 {
                     Right.Visibility = Visibility.Hidden;
@@ -91,6 +111,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
             }
         }
 
+        // Sobrecargamos el método para usar gestos
         private void RightClick(object sender, RoutedEventArgs e)
 		{
 			if (puntero < uriList.Count - 1)
@@ -113,6 +134,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
 			}
 		}
 
+
+        // Igual que el RightClick, pero a la izquierda (especie anterior)
         public void LeftClick()
         {
             if (puntero > 0)
@@ -136,6 +159,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
 
         }
 
+        // Sobrecargamos el método para usar gestos
         private void LeftClick(object sender, RoutedEventArgs e)
 		{
 			if (puntero > 0)
@@ -159,12 +183,14 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
 
 		}
         
+
+        // Obtenemos la Uri de la imagen de la especie actual
 		public Uri GetCurrentImage()
 		{
 			return uriList[indices[puntero]];
 		}
 
-        
+        // Dibujamos los botones de izquierda y derecha, así como el color del background del título
 		private void DrawButtons()
 		{
 			Uri leftButtonUri = new Uri("Assets/explora_button_left_ama.png", UriKind.Relative);

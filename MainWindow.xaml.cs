@@ -1,10 +1,4 @@
-﻿//------------------------------------------------------------------------------
-// <copyright file="MainWindow.xaml.cs" company="Microsoft">
-//     Copyright (c) Microsoft Corporation.  All rights reserved.
-// </copyright>
-//------------------------------------------------------------------------------
-
-namespace Microsoft.Samples.Kinect.ControlsBasics
+﻿namespace Microsoft.Samples.Kinect.ControlsBasics
 {
     using System;
     using System.Windows;
@@ -18,14 +12,10 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
 
 
 
-    /// <summary>
-    /// Interaction logic for MainWindow
-    /// </summary>
+    // Clase principal de la aplicación
     public partial class MainWindow
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MainWindow"/> class. 
-        /// </summary>
+        
         public MainWindow()
         {
             this.InitializeComponent();
@@ -58,7 +48,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
 
             };
 
-            //// Add in display content
+            //// Obtenemos el contenido de cada botón
             var sampleDataSource = DataModel.DataModel.GetGroup("Group-1");
 
             // set cabecera main windows
@@ -75,6 +65,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
 
         }
 
+
+        // Obtenemos la imagen de la cabecera y se la asignamos
         private void setCabecera()
         {
             Uri cabecera = new Uri("Assets/biodomoCabecera.png", UriKind.Relative);
@@ -84,6 +76,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             this.cabeceraBiodomo.Source = tempCab;
         }
 
+
+        // Obtenemos las imágenes de cada uno de los cuatro botones y se las asignamos
         private void SetMainButtons(DataCollection sampleDataSource)
         {
             if (sampleDataSource == null)
@@ -145,6 +139,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             }
         }
 
+
+        // Obtenemos las imágenes de salir y minimizar y se las asignamos a los botones
         private void SetMinimiceButton()
         {
             Uri minimizeButton = new Uri("Assets/minimize_button.png", UriKind.Relative);
@@ -167,11 +163,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             this.exitButton.Background = brushEB;
         }
 
-        /// <summary>
-        /// Handle a button click from the wrap panel.
-        /// </summary>
-        /// <param name="sender">Event sender</param>
-        /// <param name="e">Event arguments</param>
+        // Acción al clickar sobre un botón
         private void ButtonClick(object sender, RoutedEventArgs e)
         {
             var button = (Button)e.OriginalSource;
@@ -203,11 +195,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             }
         }
 
-        /// <summary>
-        /// Handle the back button click.
-        /// </summary>
-        /// <param name="sender">Event sender</param>
-        /// <param name="e">Event arguments</param>
+        // Ir hacia atrás
         private void GoBack(object sender, RoutedEventArgs e)
         {
             backButton.Visibility = System.Windows.Visibility.Hidden;

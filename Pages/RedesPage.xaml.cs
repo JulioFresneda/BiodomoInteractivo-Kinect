@@ -17,9 +17,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
     using Microsoft.Samples.Kinect.ControlsBasics.DataModel;
  
 
-    /// <summary>
-    /// A sample showing a visualization of PointerPoints from Kinect
-    /// </summary>
+    // Clase de RedesPage, la cual se inicializa cuando pinchamos en el botón de redes sociales
     public partial class RedesPage 
     {
 
@@ -27,19 +25,14 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         {
             this.InitializeComponent();
 
+            // Dibujamos las imágenes de los botones, cabecera, etc
             DrawAssets();
-
-            
-
-
-
-
 
         }
 
 
 
-
+        // Dibujamos las imágenes de los botones, cabecera, etc
         private void DrawAssets()
         {
             Uri uri = new Uri("Assets/redescabecera.png", UriKind.Relative);
@@ -88,6 +81,9 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             this.webButton.Background = brush;
         }
 
+
+        // Método que se llama cuando se clickea en un botón. Dependiendo de qué boton ha sido, se abre su
+        // página web correspondiente
         private void ClickRedes(object sender, RoutedEventArgs e)
         {
             if( (sender as Button).Name == "fbButton")

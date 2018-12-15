@@ -19,17 +19,13 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
     using Microsoft.Samples.Kinect.ControlsBasics.Pages;
   
     
-    /// <summary>
-    /// Interaction logic for MainWindow
-    /// </summary>
+    // Clase del ExploraPage
     public partial class ExploraPage
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ExploraPage"/> class. 
-        /// </summary>
-        /// 
+        // Zona actual
         private string currentZone;
 
+        // Listas con las Uri de imágenes, los títulos y las descripciones de cada imágen para cada zona
         private List<Uri> uriAmazonia;
         private List<String> titlesAmazonia;
         private List<String> descAmazonia;
@@ -46,34 +42,50 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         private ZonePage indopacificoZone;
         private ZonePage madagascarZone;
 
+        // Zona actual
         private ZonePage currentZonePage;
 
+        // ¿Tenemos una imagen en full screen?
         private bool imageInFullScreen;
 
+        // Medidas del frame antes de hacer full screen de una imagen
         private double oldWidthFrame, oldHeightFrame;
 
+
+        // Constructor
         public ExploraPage()
         {
             this.InitializeComponent();
+
+            // Cargamos las especies en las listas antes creadas
             LoadSpecies();
             LoadTitles();
             LoadDesc();
 
+            // Creamos una ZonePage para cada zona
             amazoniaZone = new ZonePage(uriAmazonia, titlesAmazonia, descAmazonia,"amazonia");
             indopacificoZone = new ZonePage(uriIndopacifico, titlesIndopacifico, descIndopacifico,"indopacifico");
             madagascarZone = new ZonePage(uriMadagascar, titlesMadagascar, descMadagascar,"madagascar");
 
+            // Dibujamos los botones asignándoles sus imágenes correspondientes
             DrawButtons();
 
+            // No hay imágen en full screen
             imageInFullScreen = false;
             
+
+            // Obtenemos las medidas del frame
             oldHeightFrame = ExploraFrame.Height;
             oldWidthFrame = ExploraFrame.Width;
 
+
+            // Por defecto se carga el amazonia
             currentZonePage = amazoniaZone;
             ExploraFrame.Content = currentZonePage;
             currentZone = "amazonia";
 
+
+            // Gestos
             GestureDetector gestureDetector = new GestureDetector();
 
             gestureDetector.GestoDetectado += (s, argss) =>
@@ -102,8 +114,12 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             };
         }
 
+
+        // Detectamos cuando pinchamos en el botón de cada zona
         private void ZoneClick(object sender, RoutedEventArgs e)
         {
+            // Si pinchamos en el botón de amazonia, cargamos la ZonePage del amazonia en el frame. 
+            // Ídem para el resto de zonas.
             if( (sender as Button).Name == "amazoniaButton")
             {
                 if (currentZone != "amazonia")
@@ -137,12 +153,16 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         }
 
 
+        // Método para hacer (o deshacer) fullscreen de una imagen
         private void FullScreenImageClick()
         {
+            // Si no hay imagen en full screen, le asignamos al frame una nueva page de tipo FullScreenImage
             if (!imageInFullScreen)
             {
+                // Obtenemos la imagen que vamos a amplicar
                 Uri imageUri = currentZonePage.GetCurrentImage();
 
+                // Hacemos el frame más grande para que se vea la imagen más grande
                 ExploraFrame.Width = 1352;
                 ExploraFrame.Height = 900;
 
@@ -152,6 +172,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                 ExploraFrame.Margin = margin;
                 imageInFullScreen = true;
             }
+            // Si la imagen está en full screen, obtenemos las medidas originales del frame y 
+            // cargamos la zona donde estábamos en el frame
             else
             {
                 ExploraFrame.Height = oldHeightFrame;
@@ -165,6 +187,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             }
         }
 
+
+        // Método sobrecargado por los gestos
         private void FullScreenImageClick(object sender, RoutedEventArgs e)
         {
             if (!imageInFullScreen)
@@ -193,6 +217,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             }
         }
         
+        // Dibujamos los botones
         private void DrawButtons()
         {
             DrawFullScreenButton();
@@ -227,6 +252,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             this.indopacificoButton.Background = brush;
         }
         
+        // Dibujamos el botón de fullscreen
         private void DrawFullScreenButton()
         {
             Uri fullscreenButtonUri = new Uri("Assets/fullscreenButton_ama.png", UriKind.Relative);
@@ -253,7 +279,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         }
 
 
-        
+        // Cargamos las especies
         private void LoadSpecies()
         {
             uriAmazonia = new List<Uri>();
@@ -366,7 +392,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
 
         }
         
-
+        
         private void LoadTitles()
         {
             titlesAmazonia = new List<string>();

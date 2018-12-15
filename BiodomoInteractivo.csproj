@@ -71,8 +71,8 @@
     <Compile Include="Pages\ExploraPage.xaml.cs">
       <DependentUpon>ExploraPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Encuesta.xaml.cs">
-      <DependentUpon>Encuesta.xaml</DependentUpon>
+    <Compile Include="Pages\EncuestaPage.xaml.cs">
+      <DependentUpon>EncuestaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="HandPointers\HandOverHeadEngagementModel.cs" />
     <Compile Include="Pages\FullScreenImage.xaml.cs">
@@ -115,7 +115,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\Encuesta.xaml">
+    <Page Include="Pages\EncuestaPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

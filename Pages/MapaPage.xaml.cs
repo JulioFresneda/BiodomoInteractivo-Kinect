@@ -1,10 +1,4 @@
-﻿//------------------------------------------------------------------------------
-// <copyright file="MapaViewer.xaml.cs" company="Microsoft">
-//     Copyright (c) Microsoft Corporation.  All rights reserved.
-// </copyright>
-//------------------------------------------------------------------------------
-
-namespace Microsoft.Samples.Kinect.ControlsBasics
+﻿namespace Microsoft.Samples.Kinect.ControlsBasics
 {
     using System;
     using System.Windows;
@@ -12,14 +6,10 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
     using System.Windows.Media.Imaging;
     using System.Windows.Resources;
 
-    /// <summary>
-    /// Interaction logic for MapaViewer
-    /// </summary>
+    // Clase del mapa del biodomo, donde cargamos la imagen
     public partial class MapaPage : UserControl
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ScrollViewerSample"/> class.
-        /// </summary>
+        
         public MapaPage()
         {
             this.InitializeComponent();

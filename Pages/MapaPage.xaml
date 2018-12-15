@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
 
         <!-- Page title -->
-        <TextBlock x:Name="pageTitle" Grid.Column="1" Text="Zoomable Photo" 
+        <TextBlock x:Name="pageTitle" Grid.Column="1" Text="Mapa del biodomo, prueba a hacer zoom" 
                    Margin="10 0 10 0" />
 
         <ScrollViewer Grid.Row="1" 

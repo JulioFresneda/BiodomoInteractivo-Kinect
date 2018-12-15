@@ -16,9 +16,7 @@ using System.Windows.Shapes;
 
 namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
 {
-    /// <summary>
-    /// Interaction logic for FullScreenImage.xaml
-    /// </summary>
+    // Imagen a tamaño completo
     public partial class FullScreenImage : Page
     {
         public FullScreenImage( Uri imageUri )
