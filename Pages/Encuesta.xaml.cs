@@ -32,6 +32,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         private Uri uriFace;
         private bool smiley = true;
 
+        // FALTA SABER COMO SE RECONOCEN LOS GESTOS PARA ASÍ PODER CAMBIAR ENTRE CARAS
+
         public Encuesta()
         {
             this.InitializeComponent();
@@ -50,6 +52,10 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             }
 
             StreamResourceInfo streamInfo = Application.GetResourceStream(uriFace);
+
+            BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
+
+            this.Face.Source = temp;
 
         }
     }

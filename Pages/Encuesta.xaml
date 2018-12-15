@@ -33,9 +33,9 @@
                     <!-- Que zona te ha gustado más -->
                     <StackPanel Orientation="Vertical" Margin="10,0,0,5" Height="800" VerticalAlignment="Top" HorizontalAlignment="Center">
                         <TextBlock Style="{StaticResource HeaderStyle}">¿Que zona te ha gustado más?</TextBlock>
-                        <RadioButton GroupName="RadioButtonGroup" Content="Indo-Pacífico" Style="{StaticResource RadioButtonStyle}" Margin="10,0,0,0" Grid.Column="1" />
-                        <RadioButton GroupName="RadioButtonGroup" Content="Amazonia" Style="{StaticResource RadioButtonStyle}" Margin="10,0,0,0" Grid.Column="2"/>
-                        <RadioButton GroupName="RadioButtonGroup" Content="Madagascar" Style="{StaticResource RadioButtonStyle}" Margin="10,0,0,0" Grid.Column="3" />
+                        <RadioButton GroupName="RadioButtonGroup" Content="Indo-Pacífico" Style="{StaticResource RadioButtonStyle}" Margin="10,0,0,0" Grid.Column="1" Foreground="Black" />
+                        <RadioButton GroupName="RadioButtonGroup" Content="Amazonia" Style="{StaticResource RadioButtonStyle}" Margin="10,0,0,0" Grid.Column="2" Foreground="Black"/>
+                        <RadioButton GroupName="RadioButtonGroup" Content="Madagascar" Style="{StaticResource RadioButtonStyle}" Margin="10,0,0,0" Grid.Column="3" Foreground="Black" />
                     </StackPanel>
 
                 </Grid>
@@ -44,12 +44,12 @@
                     <!-- Que destacarías del Biodomo (Posibilidad de varias opciones) -->
                     <StackPanel Orientation="Vertical" Margin="10,0,0,0" Height="800" VerticalAlignment="Top" HorizontalAlignment="Center">
                         <TextBlock Style="{StaticResource HeaderStyle}">¿Que destacarías del Biodomo?</TextBlock>
-                        <CheckBox Content="Buen servicio" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" />
-                        <CheckBox Content="Amabilidad" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" />
-                        <CheckBox Content="Limpieza del Biodomo" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" />
-                        <CheckBox Content="Zonas de ocio" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" />
-                        <CheckBox Content="Puestos de comida" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" />
-                        <CheckBox Content="Conocimiento de los guías" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" />
+                        <CheckBox Content="Buen servicio" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" Foreground="Black" />
+                        <CheckBox Content="Amabilidad" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" Foreground="Black" />
+                        <CheckBox Content="Limpieza del Biodomo" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" Foreground="Black" />
+                        <CheckBox Content="Zonas de ocio" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" Foreground="Black" />
+                        <CheckBox Content="Puestos de comida" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" Foreground="Black" />
+                        <CheckBox Content="Conocimiento de los guías" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" Foreground="Black" />
                     </StackPanel>
                 </Grid>
 
