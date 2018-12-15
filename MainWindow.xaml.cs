@@ -30,44 +30,66 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         {
             this.InitializeComponent();
 
+            kinectRegion.Loaded += (args, e) =>
+            {
+                App app = ((App)Application.Current);
+                app.KinectRegion = kinectRegion;
+                KinectRegion.SetKinectRegion(this, kinectRegion);
+                this.kinectRegion.KinectSensor = KinectSensor.GetDefault();
 
+                //gestureDetector = new GestureDetector(this.kinectRegion.KinectSensor);
 
+                //gestureDetector.GestoDetectado += (s, argss) =>
+                //{
+                //    this.detectedText.Text = "Gesto detectada";
+                //};
 
-            KinectRegion.SetKinectRegion(this, kinectRegion);
+                //gestureDetector.GestoNoDetectado += (s, argss) =>
+                //{
+                //    this.detectedText.Text = "Gesto no detectada";
+                //};
+            };
 
-            App app = ((App)Application.Current);
-            app.KinectRegion = kinectRegion;
+            kinectRegion.KinectSensor.IsAvailableChanged += (s, e) =>
+            {
+                //Set status kinect
+                this.statusKinectText.Text = kinectRegion.KinectSensor.IsAvailable ? Properties.Resources.SiKinectStatusText
+                                                            : Properties.Resources.NoKinectStatusText;
 
+            };
 
-            Uri exitButton = new Uri("Assets/exit_button.png", UriKind.Relative);
-            StreamResourceInfo streamInfoEB = Application.GetResourceStream(exitButton);
+            //// Add in display content
+            var sampleDataSource = DataModel.DataModel.GetGroup("Group-1");
 
-            BitmapFrame tempEB = BitmapFrame.Create(streamInfoEB.Stream);
-            var brushEB = new ImageBrush();
-            brushEB.ImageSource = tempEB;
-            this.exitButton.Background = brushEB;
+            // set cabecera main windows
+            setCabecera();
 
-            Uri minimizeButton = new Uri("Assets/minimize_button.png", UriKind.Relative);
-            streamInfoEB = Application.GetResourceStream(minimizeButton);
+            // Set the main buttons of Biodomo
+            SetMainButtons(sampleDataSource);
 
-            tempEB = BitmapFrame.Create(streamInfoEB.Stream);
-            brushEB = new ImageBrush();
-            brushEB.ImageSource = tempEB;
-            this.minimizeButton.Background = brushEB;
+            // Set minimize button in main window
+            SetMinimiceButton();
 
+            // Set exit button in main window
+            SetExitButton();
+
+        }
+
+        private void setCabecera()
+        {
             Uri cabecera = new Uri("Assets/biodomoCabecera.png", UriKind.Relative);
             StreamResourceInfo streamInfoCab = Application.GetResourceStream(cabecera);
 
             BitmapFrame tempCab = BitmapFrame.Create(streamInfoCab.Stream);
             this.cabeceraBiodomo.Source = tempCab;
+        }
 
-
-            // Use the default sensor
-            this.kinectRegion.KinectSensor = KinectSensor.GetDefault();
-
-            //// Add in display content
-            var sampleDataSource = DataModel.DataModel.GetGroup("Group-1");
-            
+        private void SetMainButtons(DataCollection sampleDataSource)
+        {
+            if (sampleDataSource == null)
+            {
+                throw new ArgumentNullException(nameof(sampleDataSource));
+            }
 
             foreach (DataItem button in sampleDataSource)
             {
@@ -79,8 +101,6 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                     BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
                     var brush = new ImageBrush();
                     brush.ImageSource = temp;
-
-                   
 
                     this.exploraButton.DataContext = button;
                     this.exploraButton.Background = brush;
@@ -94,8 +114,6 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                     var brush = new ImageBrush();
                     brush.ImageSource = temp;
 
-
-
                     this.encuestaButton.DataContext = button;
                     this.encuestaButton.Background = brush;
                 }
@@ -107,8 +125,6 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                     BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
                     var brush = new ImageBrush();
                     brush.ImageSource = temp;
-
-
 
                     this.mapaButton.DataContext = button;
                     this.mapaButton.Background = brush;
@@ -122,15 +138,33 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                     var brush = new ImageBrush();
                     brush.ImageSource = temp;
 
-
-
                     this.redesButton.DataContext = button;
                     this.redesButton.Background = brush;
                 }
 
             }
+        }
 
+        private void SetMinimiceButton()
+        {
+            Uri minimizeButton = new Uri("Assets/minimize_button.png", UriKind.Relative);
+            StreamResourceInfo streamInfoEB = Application.GetResourceStream(minimizeButton);
 
+            BitmapFrame tempEB = BitmapFrame.Create(streamInfoEB.Stream);
+            var brushEB = new ImageBrush();
+            brushEB.ImageSource = tempEB;
+            this.minimizeButton.Background = brushEB;
+        }
+
+        private void SetExitButton()
+        {
+            Uri exitButton = new Uri("Assets/exit_button.png", UriKind.Relative);
+            StreamResourceInfo streamInfoEB = Application.GetResourceStream(exitButton);
+
+            BitmapFrame tempEB = BitmapFrame.Create(streamInfoEB.Stream);
+            var brushEB = new ImageBrush();
+            brushEB.ImageSource = tempEB;
+            this.exitButton.Background = brushEB;
         }
 
         /// <summary>
@@ -139,7 +173,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         /// <param name="sender">Event sender</param>
         /// <param name="e">Event arguments</param>
         private void ButtonClick(object sender, RoutedEventArgs e)
-        {            
+        {
             var button = (Button)e.OriginalSource;
             DataItem sampleDataItem = button.DataContext as DataItem;
 
@@ -178,11 +212,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         {
             backButton.Visibility = System.Windows.Visibility.Hidden;
             navigationRegion.Content = this.kinectRegionGrid;
-
-
         }
-
-
+        
         private void ExitClick(object sender, RoutedEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();

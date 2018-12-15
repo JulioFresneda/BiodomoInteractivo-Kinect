@@ -72,6 +72,7 @@
 
 
             </ContentControl>
+            <TextBlock Name="statusKinectText" HorizontalAlignment="Left" Margin="932,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="65" Width="254"/>
         </Grid>
     </k:KinectRegion>
 </Window>
