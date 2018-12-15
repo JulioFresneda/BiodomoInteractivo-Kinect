@@ -38,6 +38,31 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         {
             this.InitializeComponent();
             this.PrintImages();
+
+            GestureDetector gestureDetector = new GestureDetector();
+
+            gestureDetector.GestoDetectado += (s, argss) =>
+            {
+                SwipedArgs arg = (SwipedArgs)argss;
+
+                if (arg.GestureType == "happy")
+                {
+                    if (smiley == false)
+                    {
+                        smiley = true;
+                        PrintImages();
+                    }
+                }
+                else
+                if (arg.GestureType == "sad")
+                {
+                    if (smiley == true)
+                    {
+                        smiley = false;
+                        PrintImages();
+                    }
+                }
+            };
         }
 
         private void PrintImages()

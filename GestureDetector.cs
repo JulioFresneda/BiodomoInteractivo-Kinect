@@ -30,6 +30,9 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
 
         private bool doOpenCloseHand = false, doSwipeRight = false, doSwipeLeft = false;
 
+        private TimeSpan oldTimeSpanRight = new TimeSpan();
+        private TimeSpan oldTimeSpanLeft = new TimeSpan();
+        private TimeSpan oldTimeSpanHand = new TimeSpan();
 
         public GestureDetector(KinectSensor kinectSensor)
         {
@@ -107,6 +110,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                 {
                     if (frame != null && bodies != null)
                     {
+                        //oldTimeSpan = frame.RelativeTime;
                         frame.GetAndRefreshBodyData(this.bodies);
 
                         // buscamos el primer body que tenga tanto la mano derecha como la el hombro izquierdo trackeado,
@@ -122,7 +126,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                         }
                         else
                         {
-                            framel1 = framel2 = framel3 = false;
+                            //framel1 = framel2 = framel3 = false;
                         }
 
                         var bodyRight =
@@ -136,7 +140,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                         }
                         else
                         {
-                            framer1 = framer2 = framer3 = false;
+                            //framer1 = framer2 = framer3 = false;
                         }
 
                         var bodyFace =
@@ -162,37 +166,59 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                         }
                         else
                         {
-                            frameh1 = frameh2 = frameh3 = false;
+                            // frameh1 = frameh2 = frameh3 = false;
                         }
+
+                        if (this.GestoDetectado != null && (doSwipeLeft || doSwipeRight || doOpenCloseHand))
+                        {
+                            SwipedArgs TypeSwipe = new SwipedArgs();
+
+                            if (doSwipeLeft)
+                            {
+                                TypeSwipe.GestureType = "left";
+                                doSwipeLeft = false;
+                                framel1 = framel2 = framel3 = false;
+
+                                framer1 = framer2 = framer3 = false;
+
+                                frameh1 = frameh2 = frameh3 = false;
+                                this.GestoDetectado(this, TypeSwipe);
+                            }
+                            else if (doSwipeRight)
+                            {
+                                TypeSwipe.GestureType = "right";
+                                doSwipeRight = false;
+                                framel1 = framel2 = framel3 = false;
+
+                                framer1 = framer2 = framer3 = false;
+
+                                frameh1 = frameh2 = frameh3 = false;
+                                this.GestoDetectado(this, TypeSwipe);
+                            }
+                            else if (doOpenCloseHand)
+                            {
+                                TypeSwipe.GestureType = "hand";
+                                doOpenCloseHand = false;
+                                framel1 = framel2 = framel3 = false;
+
+                                framer1 = framer2 = framer3 = false;
+
+                                frameh1 = frameh2 = frameh3 = false;
+                                this.GestoDetectado(this, TypeSwipe);
+                            }
+                        }
+                        //else if (this.GestoNoDetectado != null) {
+                        //    this.GestoNoDetectado(this, EventArgs.Empty);
+                        //}
                     }
-
-
-                    if (this.GestoDetectado != null && (doSwipeLeft || doSwipeRight || doOpenCloseHand))
+                    else
                     {
-                        SwipedArgs TypeSwipe = new SwipedArgs();
+                        framel1 = framel2 = framel3 = false;
 
-                        if (doSwipeLeft)
-                        {
-                            TypeSwipe.GestureType = "left";
-                            doSwipeLeft = false;
-                            this.GestoDetectado(this, TypeSwipe);
-                        }
-                        else if (doSwipeRight)
-                        {
-                            TypeSwipe.GestureType = "right";
-                            doSwipeRight = false;
-                            this.GestoDetectado(this, TypeSwipe);
-                        }
-                        else if (doOpenCloseHand)
-                        {
-                            TypeSwipe.GestureType = "hand";
-                            doOpenCloseHand = false;
-                            this.GestoDetectado(this, TypeSwipe);
-                        }
+                        framer1 =framer2=framer3 = false;
+
+                        frameh1 = frameh2 =  frameh3 = false;
                     }
-                    //else if (this.GestoNoDetectado != null) {
-                    //    this.GestoNoDetectado(this, EventArgs.Empty);
-                    //}
                 }
             }
         }
@@ -218,19 +244,13 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                             {
                                 this.GestoDetectado(this, TypeSwipe);
                             }
-                        }else if (result.FaceProperties[FaceProperty.Happy].Equals(DetectionResult.No))
+                        }
+                        else if (result.FaceProperties[FaceProperty.Happy].Equals(DetectionResult.No))
                         {
                             TypeSwipe.GestureType = "sad";
                             if (GestoDetectado != null)
                             {
                                 this.GestoDetectado(this, TypeSwipe);
-                            }
-                        }
-                        else
-                        {
-                            if (GestoNoDetectado != null)
-                            {
-                                this.GestoNoDetectado(this, EventArgs.Empty);
                             }
                         }
                     }
@@ -273,7 +293,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                     frameh3 = false;
                 }
             }
-            System.Diagnostics.Debug.WriteLine(frameh1 + " " + frameh2 + " " + frameh3);
+            //System.Diagnostics.Debug.WriteLine(frameh1 + " " + frameh2 + " " + frameh3);
         }
 
         private void checkSwipeLeft(Body bodyLeft)
@@ -283,8 +303,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             {
                 if (HorizontalDistance(bodyLeft, JointType.HandRight, JointType.ShoulderRight) >= -0.05d
                     && HorizontalDistance(bodyLeft, JointType.HandRight, JointType.ShoulderRight) <= 0.05d
-                    && VerticalDistance(bodyLeft, JointType.HandLeft, JointType.SpineMid) <= 0.0d)
-
+                    && VerticalDistance(bodyLeft, JointType.HandRight, JointType.SpineMid) > 0.0d)
                 {
                     framel1 = true;
                 }
@@ -297,6 +316,10 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                     framel2 = true;
                     framel1 = false;
                 }
+                else if (HorizontalDistance(bodyLeft, JointType.HandLeft, JointType.ShoulderLeft) < 0.0d)
+                {
+                    //framel1 = false;
+                }
             }
             else if (framel2)
             {
@@ -304,6 +327,10 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                 {
                     framel3 = true;
                     framel2 = false;
+                }
+                else if (HorizontalDistance(bodyLeft, JointType.HandLeft, JointType.Neck) > 0.0d)
+                {
+                    //framel2 = false;
                 }
             }
             else if (framel3)
@@ -326,7 +353,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             {
                 if (HorizontalDistance(bodyRight, JointType.HandLeft, JointType.ShoulderLeft) >= -0.05d
                     && HorizontalDistance(bodyRight, JointType.HandLeft, JointType.ShoulderLeft) <= 0.05d
-                    && VerticalDistance(bodyRight, JointType.HandLeft, JointType.SpineMid) >= 0.0d)
+                    && VerticalDistance(bodyRight, JointType.HandLeft, JointType.SpineMid) > 0.0d)
                 {
                     framer1 = true;
                 }
@@ -365,7 +392,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
                 }
             }
 
-            // System.Diagnostics.Debug.WriteLine(framer1 + " " + framer2 + " " + framer3);
+             System.Diagnostics.Debug.WriteLine(framer1 + " " + framer2 + " " + framer3);
 
         }
 
