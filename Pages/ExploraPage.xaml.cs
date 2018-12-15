@@ -91,18 +91,30 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         {
             if( (sender as Button).Name == "amazoniaButton")
             {
-                if (currentZone != "amazonia") currentZonePage = amazoniaZone;
-                currentZone = "amazonia";
+                if (currentZone != "amazonia")
+                {
+                    currentZonePage = amazoniaZone;
+                    currentZone = "amazonia";
+                    DrawFullScreenButton();
+                }
             }
             else if ((sender as Button).Name == "indopacificoButton")
             {
-                if (currentZone != "indopacifico") currentZonePage = indopacificoZone;
-                currentZone = "indopacifico";
+                if (currentZone != "indopacifico")
+                {
+                    currentZonePage = indopacificoZone;
+                    currentZone = "indopacifico";
+                    DrawFullScreenButton();
+                }
             }
             else if ((sender as Button).Name == "madagascarButton")
             {
-                if (currentZone != "madagascar") currentZonePage = madagascarZone;
-                currentZone = "madagascar";
+                if (currentZone != "madagascar")
+                {
+                    currentZonePage = madagascarZone;
+                    currentZone = "madagascar";
+                    DrawFullScreenButton();
+                }
             }
 
             ExploraFrame.Content = currentZonePage;
@@ -146,24 +158,11 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
 
         private void DrawButtons()
         {
-            Uri fullscreenButtonUri = new Uri("Assets/fullscreenButton_ama.png", UriKind.Relative);
-
-            if (currentZone == "amazonia")
-            {
-                fullscreenButtonUri = new Uri("Assets/fullscreenButton_ama.png", UriKind.Relative);
-            }
-            if (currentZone == "madagascar")
-            {
-                fullscreenButtonUri = new Uri("Assets/fullscreenButton_mad.png", UriKind.Relative);
-            }
-            if (currentZone == "indopacifico")
-            {
-                fullscreenButtonUri = new Uri("Assets/fullscreenButton_ip.png", UriKind.Relative);
-            }
+            
 
 
 
-
+            DrawFullScreenButton();
 
   
            
@@ -198,10 +197,32 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             this.indopacificoButton.Background = brush;
 
 
-            streamInfo = Application.GetResourceStream(fullscreenButtonUri);
+            
+        }
 
-            temp = BitmapFrame.Create(streamInfo.Stream);
-            brush = new ImageBrush();
+
+        private void DrawFullScreenButton()
+        {
+            Uri fullscreenButtonUri = new Uri("Assets/fullscreenButton_ama.png", UriKind.Relative);
+
+            if (currentZone == "amazonia")
+            {
+                fullscreenButtonUri = new Uri("Assets/fullscreenButton_ama.png", UriKind.Relative);
+            }
+            if (currentZone == "madagascar")
+            {
+                fullscreenButtonUri = new Uri("Assets/fullscreenButton_mad.png", UriKind.Relative);
+            }
+            if (currentZone == "indopacifico")
+            {
+                fullscreenButtonUri = new Uri("Assets/fullscreenButton_ip.png", UriKind.Relative);
+            }
+
+
+            StreamResourceInfo streamInfo = Application.GetResourceStream(fullscreenButtonUri);
+
+            BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
+            var brush = new ImageBrush();
             brush.ImageSource = temp;
             this.fullScreenButton.Background = brush;
         }
