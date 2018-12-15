@@ -8,7 +8,19 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
 {
     using System;
     using System.Collections.Generic;
-    using Microsoft.Samples.Kinect.ControlsBasics.Pages;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Data;
+    using System.Windows.Documents;
+    using System.Windows.Input;
+    using System.Windows.Media;
+    using System.Windows.Media.Imaging;
+    using System.Windows.Navigation;
+    using System.Windows.Resources;
+    using System.Windows.Shapes;
 
     public partial class Encuesta
     {
@@ -17,8 +29,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         /// </summary>
         /// 
 
-        private List<Uri> uriFace;
-        private ZonePage encuestaZone;
+        private Uri uriFace;
+        private bool smiley = true;
 
         public Encuesta()
         {
@@ -28,11 +40,17 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
 
         private void LoadImages()
         {
-            uriFace = new List<Uri>
+            if (smiley == true)
             {
-                new Uri("Assets/smiley.png", UriKind.Relative),
-                new Uri("Assets/sadly.png", UriKind.Relative)
-            };
+                uriFace = new Uri("Assets/smiley.png", UriKind.Relative);
+            }
+            else
+            {
+                uriFace = new Uri("Assets/sadly.png", UriKind.Relative);
+            }
+
+            StreamResourceInfo streamInfo = Application.GetResourceStream(uriFace);
+
         }
     }
 }

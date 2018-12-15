@@ -352,6 +352,10 @@
     <Resource Include="Assets\fullscreenButton_ip.png" />
     <Resource Include="Assets\fullscreenButton_mad.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\sadly.png" />
+    <Resource Include="Assets\smiley.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
