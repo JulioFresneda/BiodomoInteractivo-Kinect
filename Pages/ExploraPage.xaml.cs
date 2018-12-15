@@ -48,6 +48,11 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         private ZonePage indopacificoZone;
         private ZonePage madagascarZone;
 
+        private ZonePage currentZonePage;
+
+        private bool imageInFullScreen;
+
+        private double oldWidthFrame, oldHeightFrame;
 
         public ExploraPage()
         {
@@ -62,12 +67,15 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
 
             DrawButtons();
 
+            imageInFullScreen = false;
 
 
+            oldHeightFrame = ExploraFrame.Height;
+            oldWidthFrame = ExploraFrame.Width;
 
 
-
-            ExploraFrame.Content = amazoniaZone;
+            currentZonePage = amazoniaZone;
+            ExploraFrame.Content = currentZonePage;
             currentZone = "amazonia";
 
 
@@ -83,19 +91,54 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
         {
             if( (sender as Button).Name == "amazoniaButton")
             {
-                if (currentZone != "amazonia") ExploraFrame.Content = amazoniaZone;
+                if (currentZone != "amazonia") currentZonePage = amazoniaZone;
                 currentZone = "amazonia";
             }
             else if ((sender as Button).Name == "indopacificoButton")
             {
-                if (currentZone != "indopacifico") ExploraFrame.Content = indopacificoZone;
+                if (currentZone != "indopacifico") currentZonePage = indopacificoZone;
                 currentZone = "indopacifico";
             }
             else if ((sender as Button).Name == "madagascarButton")
             {
-                if (currentZone != "madagascar") ExploraFrame.Content = madagascarZone;
+                if (currentZone != "madagascar") currentZonePage = madagascarZone;
                 currentZone = "madagascar";
             }
+
+            ExploraFrame.Content = currentZonePage;
+
+        }
+
+
+        private void FullScreenImageClick(object sender, RoutedEventArgs e)
+        {
+            if (!imageInFullScreen)
+            {
+                Uri imageUri = currentZonePage.GetCurrentImage();
+
+                
+
+                ExploraFrame.Width = 1352;
+                ExploraFrame.Height = 900;
+
+                ExploraFrame.Content = new FullScreenImage(imageUri);
+                Thickness margin = ExploraFrame.Margin;
+                margin.Top = -100;
+                ExploraFrame.Margin = margin;
+                imageInFullScreen = true;
+            }
+            else
+            {
+                ExploraFrame.Height = oldHeightFrame;
+                ExploraFrame.Width = oldWidthFrame;
+
+                ExploraFrame.Content = currentZonePage;
+                Thickness margin = ExploraFrame.Margin;
+                margin.Top = 100;
+                ExploraFrame.Margin = margin;
+                imageInFullScreen = false;
+            }
+
 
         }
 
@@ -103,6 +146,28 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
 
         private void DrawButtons()
         {
+            Uri fullscreenButtonUri = new Uri("Assets/fullscreenButton_ama.png", UriKind.Relative);
+
+            if (currentZone == "amazonia")
+            {
+                fullscreenButtonUri = new Uri("Assets/fullscreenButton_ama.png", UriKind.Relative);
+            }
+            if (currentZone == "madagascar")
+            {
+                fullscreenButtonUri = new Uri("Assets/fullscreenButton_mad.png", UriKind.Relative);
+            }
+            if (currentZone == "indopacifico")
+            {
+                fullscreenButtonUri = new Uri("Assets/fullscreenButton_ip.png", UriKind.Relative);
+            }
+
+
+
+
+
+  
+           
+
             Uri resourceUri = new Uri("Assets/amazoniaButton.png", UriKind.Relative);
             StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
 
@@ -131,6 +196,14 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             brush.ImageSource = temp;
 
             this.indopacificoButton.Background = brush;
+
+
+            streamInfo = Application.GetResourceStream(fullscreenButtonUri);
+
+            temp = BitmapFrame.Create(streamInfo.Stream);
+            brush = new ImageBrush();
+            brush.ImageSource = temp;
+            this.fullScreenButton.Background = brush;
         }
 
 
@@ -515,5 +588,7 @@ namespace Microsoft.Samples.Kinect.ControlsBasics
             descIndopacifico.Add("Ficus macrophylla. Árbol nativo de la costa Este de Australia aunque está muy extendido por Sudamérica. Es perenne y sus hojas recuerdan a las del magnolio. Las semillas germinan en la copa de un árbol huésped. Vive como epíﬁta hasta que las raíces llegan al suelo. Entonces se alarga y estrangula al huésped convirtiéndose en un árbol independiente. Sus raíces aéreas le permiten extender ampliamente su copa.");
 
         }
+
+        
     }
 }

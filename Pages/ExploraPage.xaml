@@ -26,7 +26,7 @@
                     <Button x:Name="madagascarButton" BorderThickness="0" Content="" Click="ZoneClick" Height="100" Width="400"/>
                     <Button x:Name="indopacificoButton" BorderThickness="0" Content="" Click="ZoneClick" Height="100" Width="400"/>
                 </StackPanel>
-
+                <Button Panel.ZIndex="3" x:Name="fullScreenButton" Margin="0,350,0,00" BorderThickness="0" Height="50" Width="50" VerticalAlignment="Center" HorizontalAlignment="Right" Click="FullScreenImageClick"></Button>
                 <Frame x:Name="ExploraFrame" Margin="0,200,0,0" NavigationUIVisibility="Hidden" Width="1200" />
 
 

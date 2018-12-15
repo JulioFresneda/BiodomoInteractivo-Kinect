@@ -134,18 +134,26 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
         }
 
 
+        public Uri GetCurrentImage()
+        {
+            return uriList[indices[puntero]];
+        }
+
+
 
         private void DrawButtons()
         {
 
             Uri leftButtonUri = new Uri("Assets/explora_button_left_ama.png", UriKind.Relative);
             Uri rightButtonUri = new Uri("Assets/explora_button_right_ama.png", UriKind.Relative);
+            
 
             if ( currentZone == "amazonia")
             {
                 this.Titulo.Background = new SolidColorBrush(Color.FromArgb(0xff,0xff,0xd3,0x00));
                 leftButtonUri = new Uri("Assets/explora_button_left_ama.png", UriKind.Relative);
                 rightButtonUri = new Uri("Assets/explora_button_right_ama.png", UriKind.Relative);
+               
             }
             if (currentZone == "madagascar")
             {
@@ -153,12 +161,14 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
                 this.Titulo.Background = new SolidColorBrush(Color.FromArgb(0xff, 0xc2, 0x00, 0x17));
                 leftButtonUri = new Uri("Assets/explora_button_left_mad.png", UriKind.Relative);
                 rightButtonUri = new Uri("Assets/explora_button_right_mad.png", UriKind.Relative);
+           
             }
             if (currentZone == "indopacifico")
             {
                 this.Titulo.Background = new SolidColorBrush(Color.FromArgb(0xff, 0x00, 0xd1, 0xb6));
                 leftButtonUri = new Uri("Assets/explora_button_left_ip.png", UriKind.Relative);
                 rightButtonUri = new Uri("Assets/explora_button_right_ip.png", UriKind.Relative);
+              
             }
 
 
@@ -182,6 +192,8 @@ namespace Microsoft.Samples.Kinect.ControlsBasics.Pages
             brush = new ImageBrush();
             brush.ImageSource = temp;
             this.Right.Background = brush;
+
+         
         }
 
 
