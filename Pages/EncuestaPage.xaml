@@ -29,7 +29,7 @@
                 <!-- Page title -->
                 <TextBlock x:Name="pageTitle" Text="Cuestionario de calidad" TextAlignment="Center" Height="80" Margin="0,4" Grid.Column="1" Grid.Row="0" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
-                <Grid Grid.Row="1" Grid.Column="0">
+                <Grid Grid.Row="1" Grid.Column="0" Margin="0,0,0,210">
                     <!-- Que zona te ha gustado más -->
                     <StackPanel Orientation="Vertical" Margin="10,0,0,5" Height="800" VerticalAlignment="Top" HorizontalAlignment="Center">
                         <TextBlock Style="{StaticResource HeaderStyle}">¿Que zona te ha gustado más?</TextBlock>
@@ -40,7 +40,7 @@
 
                 </Grid>
 
-                <Grid Grid.Column="2" Margin="10,0,0,5" Grid.Row="1">
+                <Grid Grid.Column="2" Margin="10,0,0,210" Grid.Row="1">
                     <!-- Que destacarías del Biodomo (Posibilidad de varias opciones) -->
                     <StackPanel Orientation="Vertical" Margin="10,0,0,0" Height="800" VerticalAlignment="Top" HorizontalAlignment="Center">
                         <TextBlock Style="{StaticResource HeaderStyle}">¿Que destacarías del Biodomo?</TextBlock>
@@ -48,12 +48,11 @@
                         <CheckBox Content="Amabilidad" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" Foreground="Black" />
                         <CheckBox Content="Limpieza del Biodomo" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" Foreground="Black" />
                         <CheckBox Content="Zonas de ocio" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" Foreground="Black" />
-                        <CheckBox Content="Puestos de comida" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" Foreground="Black" />
                         <CheckBox Content="Conocimiento de los guías" Style="{StaticResource CheckBoxStyle}" Margin="10,0,0,0" Foreground="Black" />
                     </StackPanel>
                 </Grid>
 
-                <Grid Grid.Column="1" Margin="10,0,0,5" Grid.Row="1">
+                <Grid Grid.Column="1" Margin="10,0,0,210" Grid.Row="1">
                     <!-- Imagenes -->
                     <Image x:Name="Face" Height="200" Width="200" Margin="20,20,25,270" />
                 </Grid>
