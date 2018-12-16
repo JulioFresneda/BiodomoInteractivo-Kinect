@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="1100" d:DesignWidth="1400"
+      d:DesignHeight="900" d:DesignWidth="1200"
 	>
 
     <Grid>
@@ -21,13 +21,13 @@
                     <RowDefinition Height="1020"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="450" />
-                    <ColumnDefinition Width="450" />
+                    <ColumnDefinition Width="400" />
+                    <ColumnDefinition Width="350" />
                     <ColumnDefinition Width="450" />
                 </Grid.ColumnDefinitions>
 
                 <!-- Page title -->
-                <TextBlock x:Name="pageTitle" Text="Cuestionario de calidad" TextAlignment="Center" Height="80" Margin="0,4" Grid.Column="1" Grid.Row="0" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock x:Name="pageTitle" Text="Cuestionario de calidad" TextAlignment="Center" Height="80" Margin="0,4" Grid.Column="1" Grid.Row="0" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
                 <Grid Grid.Row="1" Grid.Column="0">
                     <!-- Que zona te ha gustado más -->
@@ -55,7 +55,7 @@
 
                 <Grid Grid.Column="1" Margin="10,0,0,5" Grid.Row="1">
                     <!-- Imagenes -->
-                    <Image x:Name="Face" Height="400" Width="400" Margin="20,20,25,270" />
+                    <Image x:Name="Face" Height="200" Width="200" Margin="20,20,25,270" />
                 </Grid>
 
             </Grid>
